@@ -1,0 +1,32 @@
+/* src/styles/global.css */
+
+/* Breakpoints */
+@media (min-width: 480px) {
+  /* Styles for mobile */
+}
+
+@media (min-width: 768px) {
+  /* Styles for tablet */
+}
+
+@media (min-width: 1024px) {
+  /* Styles for desktop */
+}
+
+/* Example usage in a class */
+.container {
+  display: flex;
+  flex-direction: column; /* Default for mobile */
+
+  @media (min-width: 768px) {
+    flex-direction: row; /* Adjust for tablet+ */
+  }
+}
+
+/* src/styles/global.css */
+
+/* Add padding to the entire layout */
+body {
+  padding-left: 20px; /* Add your desired padding */
+  margin: 0; /* Ensure no default margin */
+}

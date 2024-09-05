@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import HomePage from "./pages/HomePage"; // Import your main component
+import { ThemeProvider } from "styled-components"; // Import ThemeProvider from styled-components
+import { theme } from "./styles/theme"; // Import your theme settings
+import GlobalStyles from "./styles/GlobalStyles"; // Import global styles
+import "./styles/global.css"; // Ensure the correct path to your global CSS
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles /> {/* Apply global styles */}
+      <div className="App">
+        <HomePage />
+      </div>
+    </ThemeProvider>
   );
 }
 
