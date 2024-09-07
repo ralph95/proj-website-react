@@ -1,14 +1,14 @@
 // src/components/templates/MainTemplate.jsx
 import React from "react";
+import Section from "../atoms/Section/Section";
+
 import Header from "../organisms/Header/Header"; // Corrected path
 import Footer from "../organisms/Footer/Footer"; // Corrected path
 
 const MainTemplate = ({ children }) => {
   return (
-    <div className="main-template">
-      <Header />
+    <div>
       <main>{children}</main>
-      <Footer />
     </div>
   );
 };

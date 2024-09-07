@@ -9,11 +9,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
 
-  h1 {
-    color: ${(props) =>
-      props.theme.colors.primary}; /* Apply primary color to all h1 */
-    font-size: 2.5rem;
-  }
+  
 
   /* You can also set other elements' default styles here, like a, p, etc. */
 `;
