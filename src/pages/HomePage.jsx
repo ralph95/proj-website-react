@@ -7,48 +7,41 @@ import Row from "../components/atoms/Row/Row";
 import Column from "../components/atoms/Column/Column";
 import Header from "../components/organisms/Header/Header"; // Corrected path
 import Footer from "../components/organisms/Footer/Footer";
+import heroImage from "../assets/images/hero-banner.jpg";
 
 const HomePage = () => {
-  const handleSearch = (query) => {
-    console.log("Search query:", query);
-  };
-
   return (
-    <div>
-      <Header />
-      <Section>
-        <MainTemplate onSearch={handleSearch}>
-          <Row>
-            <Column>
-              <h2>Welcome</h2>
-              <Spacer />
-              <p>Check out my work below.</p>
-            </Column>
-            <Column>
-              <h2>Welcome</h2>
-              <Spacer />
-              <p>Check out my work below.</p>
-            </Column>
-            <Column>
-              <h2>Welcome</h2>
-              <Spacer />
-              <p>Check out my work below.</p>
-            </Column>
-            <Column>
-              <h2>Welcome</h2>
-              <Spacer />
-              <p>Check out my work below.</p>
-            </Column>
-            <Column>
-              <h2>Welcome</h2>
-              <Spacer />
-              <p>Check out my work below.</p>
-            </Column>
-          </Row>
-        </MainTemplate>
+    <MainTemplate>
+      <Section
+        heroImage={heroImage}
+        heroContent={
+          <>
+            <Spacer />
+            <h1>Welcome to Our Website</h1>
+            <p>Discover amazing products and services.</p>
+          </>
+        }
+      >
+        <Row>
+          <Column>
+            <h2>About Us</h2>
+            <p>We are a company .</p>
+          </Column>
+          <Column>
+            <h2>About Us</h2>
+            <p>We are a company </p>
+          </Column>
+          <Column>
+            <h2>About Us</h2>
+            <p>We are a company .</p>
+          </Column>
+          <Column>
+            <h2>About Us</h2>
+            <p>We are a company .</p>
+          </Column>
+        </Row>
       </Section>
-      <Footer />
-    </div>
+    </MainTemplate>
   );
 };
 
