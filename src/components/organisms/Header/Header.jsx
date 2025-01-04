@@ -1,8 +1,11 @@
 // src/components/organisms/Header/Header.jsx
 import React from "react";
 import styled from "styled-components";
-import PrimaryButton from "../../atoms/PrimaryButton/PrimaryButton";
 import polygon from "../../../assets/svg/polygon.svg";
+import PrimaryButton from "../../atoms/PrimaryButton/PrimaryButton";
+import Menu from "../../molecules/Menu/Menu";
+import ButtonWrapper from "../../molecules/ButtonWrapper/ButtonWrapper";
+import LogoWrapper from "../../molecules/LogoWrapper/LogoWrapper";
 
 // Styled-component for the header
 const StyledHeader = styled.header`
@@ -49,9 +52,9 @@ const StyledHeader = styled.header`
 
   @media (max-width: 768px) {
     &::after {
-      width: 30%;
+      width: 25%;
       height: 1.5rem; /* Adjust height for smaller screens */
-      bottom: calc(-1 * 1.1rem); /* Adjust bottom dynamically */
+      bottom: calc(-1 * 1rem); /* Adjust bottom dynamically */
     }
   }
 
@@ -71,16 +74,18 @@ const HeaderContainer = styled.div`
   padding: 20px; /* Tailwind's p-5 is 1.25rem which is approximately 20px */
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center the menu */
   align-items: center;
+  position: relative; /* Ensure logo and button position doesn't affect centering */
 `;
 
 const Header = () => {
   return (
     <StyledHeader>
       <HeaderContainer>
-        <h1>Website</h1>
-        <PrimaryButton>Contact</PrimaryButton>
+        <LogoWrapper />
+        <Menu />
+        <ButtonWrapper />
       </HeaderContainer>
     </StyledHeader>
   );
