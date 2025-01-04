@@ -5,8 +5,6 @@ import Section from "../components/atoms/Section/Section";
 import Spacer from "../components/atoms/Spacer/Spacer";
 import Row from "../components/atoms/Row/Row";
 import Column from "../components/atoms/Column/Column";
-import Header from "../components/organisms/Header/Header"; // Corrected path
-import Footer from "../components/organisms/Footer/Footer";
 import heroImage from "../assets/images/hero-banner.jpg";
 
 const HomePage = () => {
