@@ -48,7 +48,7 @@ const StyledPolygon = styled.div`
     &::after {
       width: 25%; /* Further adjust width */
       height: 1.75rem; /* Further adjust height */
-      bottom: calc(-1 * 0.55rem); /* Adjust bottom dynamically */
+      bottom: calc(-1 * 0.56rem); /* Adjust bottom dynamically */
     }
   }
 `;
