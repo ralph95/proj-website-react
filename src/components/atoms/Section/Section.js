@@ -13,14 +13,14 @@ const Section = ({ children, heroImage, heroContent }) => {
           }}
         >
           {/* Overlay content in hero section */}
-          <div className="max-w-7xl mx-auto p-5 gap-4 h-full flex flex-col items-start pt-10 md:pt-20 lg:pt-32">
+          <div className="max-w-7xl mx-auto p-5 h-full flex flex-col items-start justify-center">
             {heroContent}
           </div>
         </div>
       )}
 
       {/* Regular Section */}
-      <div className="bg-[#E5EAF5] w-full min-h-screen">
+      <div className="bg-[#E5EAF5] w-full">
         <div className="max-w-7xl mx-auto p-5 grid gap-4">{children}</div>
       </div>
     </>
