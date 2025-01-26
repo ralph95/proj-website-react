@@ -47,8 +47,8 @@ const StyledPolygon = styled.div`
   @media (max-width: 768px) {
     &::after {
       width: 25%; /* Further adjust width */
-      height: 1.5rem; /* Further adjust height */
-      bottom: 0; /* Still anchored */
+      height: 1.75rem; /* Further adjust height */
+      bottom: calc(-1 * 0.55rem); /* Adjust bottom dynamically */
     }
   }
 `;
@@ -65,10 +65,10 @@ const HomePage = () => {
             <p>Discover amazing products and services.</p>
           </>
         }
-      ></Section>
-      <Section>
+      >
         <StyledPolygon />
       </Section>
+      <Spacer height="4rem" style={{ backgroundColor: "#494d5f" }} />
       <Section>
         <Row>
           <Column>
