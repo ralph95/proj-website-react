@@ -65,7 +65,8 @@ const HomePage = () => {
             <p>Discover amazing products and services.</p>
           </>
         }
-      >
+      ></Section>
+      <Section>
         <StyledPolygon />
       </Section>
       <Section>
