@@ -11,7 +11,9 @@ const MainTemplate = ({ children }) => {
     <div>
       <Header />
       <main>{children}</main>
-      <Footer />
+      <Section>
+        <Footer />
+      </Section>
     </div>
   );
 };

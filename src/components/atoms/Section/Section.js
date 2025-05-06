@@ -21,7 +21,7 @@ const Section = ({ children, heroImage, heroContent }) => {
       )}
 
       {/* Directly rendering children without extra wrapper */}
-      <div className="max-w-7xl mx-auto">{children}</div>
+      <div className="max-w-7xl mx-auto px-5">{children}</div>
     </div>
   );
 };
