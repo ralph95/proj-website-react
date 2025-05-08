@@ -6,6 +6,6 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000" # Map host:container
+      - "3000:80" # Map host:container
     container_name: react-app-container
     restart: always
