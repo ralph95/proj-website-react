@@ -10,8 +10,8 @@ COPY . .
 # Install dependencies
 RUN npm install
 
-# Expose the correct port
-EXPOSE 3000
+ENV PORT=80
+EXPOSE 80
 
 # Start the React app
-CMD ["serve", "-s", "build", "-l", "80"]
+CMD ["npm", "start"]
