@@ -8,6 +8,7 @@ import Column from "../components/atoms/Column/Column";
 import heroImage from "../assets/images/hero-banner.jpg";
 import styled from "styled-components";
 import inversedPolygon from "../assets/svg/inversed-polygon.svg";
+import heroRaf from "../assets/images/hero_raf.png";
 
 const StyledPolygon = styled.div`
   height: 0rem;
@@ -59,11 +60,16 @@ const HomePage = () => {
       <Section
         heroImage={heroImage}
         heroContent={
-          <>
-            <Spacer />
-            <h1>Welcome to Our Website</h1>
-            <p>Discover amazing products and services.</p>
-          </>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full">
+            <div className="text-left">
+              <Spacer />
+              <h1 className="text-4xl font-bold">Welcome to Our Website</h1>
+              <p className="text-lg">Discover amazing products and services.</p>
+            </div>
+            <div className="max-w-[300px] w-full">
+              <img src={heroRaf} alt="Hero Raf" className="w-full h-auto" />
+            </div>
+          </div>
         }
       >
         <StyledPolygon />
