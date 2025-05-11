@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 const ButtonWrapper = () => {
   return (
     <Wrapper>
-      <PrimaryButton>Contact</PrimaryButton>
+      <PrimaryButton>About Me</PrimaryButton>
     </Wrapper>
   );
 };

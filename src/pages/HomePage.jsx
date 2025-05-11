@@ -12,7 +12,7 @@ import heroRaf from "../assets/images/hero_raf.png";
 
 const StyledPolygon = styled.div`
   height: 0rem;
-  background-color: #494d5f;
+  background-color: #0d0d0d;
   display: flex;
   align-items: center;
   position: relative;
@@ -27,7 +27,7 @@ const StyledPolygon = styled.div`
     transform: translateX(-50%);
     width: 100%; /* Maintain responsive width */
     height: 2.0625rem; /* Default height */
-    background: #494d5f;
+    background: #0d0d0d;
     -webkit-mask-image: url(${inversedPolygon});
     mask-image: url(${inversedPolygon});
     -webkit-mask-repeat: no-repeat;
@@ -63,8 +63,10 @@ const HomePage = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full">
             <div className="text-left">
               <Spacer />
-              <h1 className="text-4xl font-bold">Welcome to Our Website</h1>
-              <p className="text-lg">Discover amazing products and services.</p>
+              <h1 className="text-6xl font-bold">Hi, I'm Ralph</h1>
+              <p className="text-4xl mt-8 font-bold">
+                — I build and maintain websites.
+              </p>
             </div>
             <div className="max-w-[300px] w-full">
               <img src={heroRaf} alt="Hero Raf" className="w-full h-auto" />
@@ -74,7 +76,7 @@ const HomePage = () => {
       >
         <StyledPolygon />
       </Section>
-      <Spacer height="4rem" style={{ backgroundColor: "#494d5f" }} />
+      <Spacer height="4rem" style={{ backgroundColor: "#0d0d0d" }} />
       <Section>
         <Row>
           <Column>

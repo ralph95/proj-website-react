@@ -1,18 +1,24 @@
 import React from "react";
 import styled from "styled-components";
+import logo from "../../../assets/images/rocketlogo.png";
 
 const LogoWrapper = styled.div`
   position: absolute;
   left: 20px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
+  top: 20px; /* Added for better vertical placement */
+  display: flex;
+  align-items: center;
+`;
+
+const LogoImage = styled.img`
+  height: 100px; /* Adjust size as needed */
+  width: auto;
 `;
 
 const Logo = () => {
   return (
     <LogoWrapper>
-      <h1>Website</h1>
+      <LogoImage src={logo} alt="RocketCode Logo" />
     </LogoWrapper>
   );
 };

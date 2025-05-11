@@ -10,7 +10,7 @@ import LogoWrapper from "../../molecules/LogoWrapper/LogoWrapper";
 // Styled-component for the header
 const StyledHeader = styled.header`
   height: 8.3125rem;
-  background-color: #494d5f;
+  background-color: #0d0d0d;
   display: flex;
   align-items: center;
   position: relative;
@@ -27,7 +27,7 @@ const StyledHeader = styled.header`
     transform: translateX(-50%); /* Center horizontally */
     width: 100%;
     height: 2.0625rem;
-    background: #494d5f;
+    background: #0d0d0d;
 
     /* Use imported SVG for masking */
     -webkit-mask-image: url(${polygon});
