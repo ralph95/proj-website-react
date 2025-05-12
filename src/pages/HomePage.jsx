@@ -69,14 +69,14 @@ const HomePage = () => {
         heroImage={heroImage}
         heroContent={
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full">
-            <div className="text-left">
+            <div className="text-left pt-[5px]">
               <Spacer />
               <h1 className="text-6xl font-bold">Hi, I'm Ralph</h1>
               <p className="text-4xl mt-8 font-bold">
                 — I build and maintain websites.
               </p>
             </div>
-            <div className="max-w-[300px] w-full">
+            <div className="max-w-[300px] w-full pb-[5px]">
               <img src={heroRaf} alt="Hero Raf" className="w-full h-auto" />
             </div>
           </div>
