@@ -58,13 +58,13 @@ const StyledHeader = styled.header`
     }
   }
 
-  // @media (max-width: 480px) {
-  //   &::after {
-  //     width: 25%;
-  //     height: 1.25rem; /* Adjust height for mobile screens */
-  //     bottom: calc(-2 * 1.5rem); /* Adjust bottom dynamically */
-  //   }
-  // }
+  @media (max-width: 480px) {
+    &::after {
+      width: 75%;
+      height: 5.75rem; /* Adjust height for mobile screens */
+      bottom: calc(-2 * 1.5rem); /* Adjust bottom dynamically */
+    }
+  }
 `;
 
 // Styled-component for the inner container

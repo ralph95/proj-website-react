@@ -52,6 +52,14 @@ const StyledPolygon = styled.div`
       bottom: calc(-1 * 0.56rem); /* Adjust bottom dynamically */
     }
   }
+
+  @media (max-width: 480px) {
+    &::after {
+      width: 75%;
+      height: 6.25rem; /* Adjust height for mobile screens */
+      bottom: calc(-2 * 1.5rem); /* Adjust bottom dynamically */
+    }
+  }
 `;
 
 const HomePage = () => {
