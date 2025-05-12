@@ -14,11 +14,31 @@ module.exports = {
       keyframes: {
         float: {
           "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-20px)" },
+          "50%": { transform: "translateY(-15px)" },
+        },
+        floatHTML: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        floatJS: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        floatReact: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-15px)" },
+        },
+        floatTS: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
         },
       },
       animation: {
         float: "float 3s ease-in-out infinite",
+        floatHTML: "floatHTML 3s ease-in-out infinite",
+        floatJS: "floatJS 5s ease-in-out infinite",
+        floatReact: "floatReact 4s ease-in-out infinite",
+        floatTS: "floatTS 6s ease-in-out infinite",
       },
     },
   },

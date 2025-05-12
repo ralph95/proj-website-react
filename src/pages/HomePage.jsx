@@ -6,6 +6,10 @@ import Spacer from "../components/atoms/Spacer/Spacer";
 import Row from "../components/atoms/Row/Row";
 import Column from "../components/atoms/Column/Column";
 import heroImage from "../assets/images/hero-banner.jpg";
+import reactLogo from "../assets/images/react-logo.png";
+import typeScript from "../assets/images/typescript.png";
+import htmlLogo from "../assets/images/html.png";
+import javaScript from "../assets/images/javascript.png";
 import styled from "styled-components";
 import inversedPolygon from "../assets/svg/inversed-polygon.svg";
 import heroRaf from "../assets/images/hero_raf.png";
@@ -69,15 +73,48 @@ const HomePage = () => {
         heroImage={heroImage}
         heroContent={
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full">
+            {/* Left Side Text */}
             <div className="text-left pt-[5px]">
               <Spacer />
               <h1 className="text-6xl font-bold">Hi, I'm Ralph</h1>
               <p className="text-4xl mt-8 font-bold">
-                — I build and maintain websites.
+                I build and maintain websites.
               </p>
             </div>
-            <div className="max-w-[300px] w-full pb-[5px]">
-              <img src={heroRaf} alt="Hero Raf" className="w-full h-auto" />
+
+            {/* Right Side Chibi Image + Floating Logos */}
+            <div className="relative max-w-[300px] w-full pb-[5px]">
+              {/* Hero Character */}
+              <img
+                src={heroRaf}
+                alt="Hero Raf"
+                className="w-full h-auto z-10 relative"
+              />
+
+              {/* Floating Logos */}
+              <img
+                src={htmlLogo}
+                alt="HTML5"
+                className="absolute top-[40%] left-[-10%] w-[50px] animate-floatHTML"
+                style={{ transform: "rotate(20deg)" }}
+              />
+              <img
+                src={javaScript}
+                alt="JavaScript"
+                className="absolute top-[50%] left-[-15%] w-[30px] animate-floatJS"
+                style={{ transform: "rotate(-30deg)" }}
+              />
+              <img
+                src={reactLogo}
+                alt="React"
+                className="absolute top-[50%] left-[5%] w-[40px] animate-float"
+              />
+              <img
+                src={typeScript}
+                alt="TypeScript"
+                className="absolute top-[60%] left-[-10%] w-[30px] animate-floatTS"
+                style={{ transform: "rotate(20deg)" }}
+              />
             </div>
           </div>
         }
