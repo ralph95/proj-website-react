@@ -95,13 +95,12 @@ const HomePage = () => {
               <Spacer />
               <h1 className="text-4xl font-bold">Hi, I'm Ralph</h1>
               <h1 className="text-5xl mt-4 mb-4 font-bold">
-                {isDevOps ? "I'm a DevOps Engineer." : "I'm a Developer."}
+                {isDevOps ? "I'm a DevOps Engineer." : "I'm a Web Developer."}
               </h1>
               <p className="hidden md:block">
-                Lorem Ipsum denounce with righteous indignation and dislike men
-                who are so beguiled and demoralized by the charms of pleasure of
-                the moment, so blinded by desire, that they cannot foresee the
-                pain and trouble that are bound
+                {isDevOps
+                  ? "As a DevOps Engineer, I automate processes and optimize workflows to enhance system reliability and scalability. I focus on continuous integration and delivery for efficient software deployment."
+                  : "As a web developer, I design and build websites that are fast, responsive, and user-friendly. I work with both front-end and back-end technologies to create seamless and dynamic online experiences."}
               </p>
             </div>
 
