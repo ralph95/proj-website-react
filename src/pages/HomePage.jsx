@@ -91,12 +91,18 @@ const HomePage = () => {
             onClick={toggleTitle}
           >
             {/* Left Side Text */}
-            <div className="text-left pt-[5px] sm:text-left text-center">
+            <div className="text-left pt-[5px] sm:text-left text-center max-w-md md:max-w-[45%]">
               <Spacer />
               <h1 className="text-4xl font-bold">Hi, I'm Ralph</h1>
-              <h1 className="text-5xl mt-4 font-bold">
+              <h1 className="text-5xl mt-4 mb-4 font-bold">
                 {isDevOps ? "I'm a DevOps Engineer." : "I'm a Developer."}
               </h1>
+              <p className="hidden md:block">
+                Lorem Ipsum denounce with righteous indignation and dislike men
+                who are so beguiled and demoralized by the charms of pleasure of
+                the moment, so blinded by desire, that they cannot foresee the
+                pain and trouble that are bound
+              </p>
             </div>
 
             {/* Right Side Chibi Image + Floating Logos */}
