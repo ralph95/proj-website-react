@@ -91,10 +91,10 @@ const HomePage = () => {
             onClick={toggleTitle}
           >
             {/* Left Side Text */}
-            <div className="text-left pt-[5px]">
+            <div className="text-left pt-[5px] sm:text-left text-center">
               <Spacer />
               <h1 className="text-4xl font-bold">Hi, I'm Ralph</h1>
-              <h1 className="text-6xl mt-8 font-bold">
+              <h1 className="text-5xl mt-4 font-bold">
                 {isDevOps ? "I'm a DevOps Engineer." : "I'm a Developer."}
               </h1>
             </div>
