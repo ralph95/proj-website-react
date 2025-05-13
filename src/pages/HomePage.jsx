@@ -95,14 +95,12 @@ const HomePage = () => {
               <img
                 src={htmlLogo}
                 alt="HTML5"
-                className="absolute top-[40%] left-[-10%] w-[50px] animate-floatHTML"
-                style={{ transform: "rotate(20deg)" }}
+                className="absolute top-[30%] left-[-5%] w-[50px] animate-floatHTML"
               />
               <img
                 src={javaScript}
                 alt="JavaScript"
-                className="absolute top-[50%] left-[-15%] w-[30px] animate-floatJS"
-                style={{ transform: "rotate(-30deg)" }}
+                className="absolute top-[50%] left-[90%] w-[50px] animate-floatJS"
               />
               <img
                 src={reactLogo}
@@ -112,8 +110,7 @@ const HomePage = () => {
               <img
                 src={typeScript}
                 alt="TypeScript"
-                className="absolute top-[60%] left-[-10%] w-[30px] animate-floatTS"
-                style={{ transform: "rotate(20deg)" }}
+                className="absolute top-[30%] left-[95%] w-[45px] animate-floatTS"
               />
             </div>
           </div>
