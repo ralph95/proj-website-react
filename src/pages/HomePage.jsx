@@ -1,5 +1,5 @@
 // src/pages/HomePage.jsx
-import React from "react";
+import React, { useState } from "react";
 import MainTemplate from "../components/templates/MainTemplate";
 import Section from "../components/atoms/Section/Section";
 import Spacer from "../components/atoms/Spacer/Spacer";
@@ -13,6 +13,11 @@ import javaScript from "../assets/images/javascript.png";
 import styled from "styled-components";
 import inversedPolygon from "../assets/svg/inversed-polygon.svg";
 import heroRaf from "../assets/images/hero_raf.png";
+
+import docker from "../assets/images/docker.png";
+import jenkins from "../assets/images/jenkins.png";
+import amazon from "../assets/images/amazon.png";
+import github from "../assets/images/github.png";
 
 const StyledPolygon = styled.div`
   height: 0rem;
@@ -67,24 +72,35 @@ const StyledPolygon = styled.div`
 `;
 
 const HomePage = () => {
+  const [isDevOps, setIsDevOps] = useState(false);
+
+  const [showDevOpsLogos, setShowDevOpsLogos] = useState(false);
+
+  const toggleTitle = () => {
+    setIsDevOps((prev) => !prev);
+    setShowDevOpsLogos((prev) => !prev);
+  };
+
   return (
     <MainTemplate>
       <Section
         heroImage={heroImage}
         heroContent={
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full">
+          <div
+            className="flex flex-col md:flex-row items-center justify-between gap-8 w-full cursor-pointer"
+            onClick={toggleTitle}
+          >
             {/* Left Side Text */}
             <div className="text-left pt-[5px]">
               <Spacer />
-              <h1 className="text-6xl font-bold">Hi, I'm Ralph</h1>
-              <p className="text-4xl mt-8 font-bold">
-                I build and maintain websites.
-              </p>
+              <h1 className="text-4xl font-bold">Hi, I'm Ralph</h1>
+              <h1 className="text-6xl mt-8 font-bold">
+                {isDevOps ? "I'm a DevOps Engineer." : "I'm a Developer."}
+              </h1>
             </div>
 
             {/* Right Side Chibi Image + Floating Logos */}
             <div className="relative max-w-[300px] w-full pb-[5px]">
-              {/* Hero Character */}
               <img
                 src={heroRaf}
                 alt="Hero Raf"
@@ -92,26 +108,104 @@ const HomePage = () => {
               />
 
               {/* Floating Logos */}
-              <img
-                src={htmlLogo}
-                alt="HTML5"
-                className="absolute top-[30%] left-[-5%] w-[50px] animate-floatHTML"
-              />
-              <img
-                src={javaScript}
-                alt="JavaScript"
-                className="absolute top-[50%] left-[90%] w-[50px] animate-floatJS"
-              />
-              <img
-                src={reactLogo}
-                alt="React"
-                className="absolute top-[50%] left-[5%] w-[40px] animate-float"
-              />
-              <img
-                src={typeScript}
-                alt="TypeScript"
-                className="absolute top-[30%] left-[95%] w-[45px] animate-floatTS"
-              />
+              <div className="absolute top-[35%] left-[-5%] w-[50px] h-[50px] overflow-hidden animate-floatJS perspective-[1000px]">
+                {/* HTML5 Logo - Exit with 3D scale/rotate down */}
+                <img
+                  src={htmlLogo}
+                  alt="HTML5"
+                  className={`absolute transition-all duration-700 ease-in-out transform-gpu
+                      ${
+                        showDevOpsLogos
+                          ? "translate-y-full opacity-0 scale-75 rotate-x-12 blur-sm"
+                          : "translate-y-0 opacity-100 scale-100 rotate-x-0 blur-0"
+                      }`}
+                  style={{ top: 0, left: 0 }}
+                />
+
+                {/* Jenkins Logo - Enter with 3D scale/rotate up */}
+                <img
+                  src={jenkins}
+                  alt="Jenkins"
+                  className={`absolute transition-all duration-700 ease-in-out transform-gpu
+                      ${
+                        showDevOpsLogos
+                          ? "translate-y-0 opacity-100 scale-105 rotate-x-0 drop-shadow-[0_0_10px_rgba(0,255,255,0.7)]"
+                          : "-translate-y-full opacity-0 scale-90 rotate-x-[-12deg]"
+                      }`}
+                  style={{ top: 0, left: 0 }}
+                />
+              </div>
+              {/* JavaScript → GitHub */}
+              <div className="absolute top-[50%] left-[90%] w-[50px] h-[50px] overflow-hidden animate-floatJS perspective-[1000px]">
+                <img
+                  src={javaScript}
+                  alt="JavaScript"
+                  className={`absolute transition-all duration-700 ease-in-out transform-gpu ${
+                    showDevOpsLogos
+                      ? "translate-y-full opacity-0 scale-75 rotate-x-12 blur-sm"
+                      : "translate-y-0 opacity-100 scale-100 rotate-x-0 blur-0"
+                  }`}
+                  style={{ top: 0, left: 0 }}
+                />
+                <img
+                  src={github}
+                  alt="GitHub"
+                  className={`absolute transition-all duration-700 ease-in-out transform-gpu ${
+                    showDevOpsLogos
+                      ? "translate-y-0 opacity-100 scale-105 rotate-x-0 drop-shadow-[0_0_10px_rgba(0,255,255,0.7)]"
+                      : "-translate-y-full opacity-0 scale-90 rotate-x-[-12deg]"
+                  }`}
+                  style={{ top: 0, left: 0 }}
+                />
+              </div>
+
+              {/* TypeScript → Amazon */}
+              <div className="absolute top-[30%] left-[95%] w-[50px] h-[50px] overflow-hidden animate-floatTS perspective-[1000px]">
+                <img
+                  src={typeScript}
+                  alt="TypeScript"
+                  className={`absolute transition-all duration-700 ease-in-out transform-gpu ${
+                    showDevOpsLogos
+                      ? "translate-y-full opacity-0 scale-75 rotate-x-12 blur-sm"
+                      : "translate-y-0 opacity-100 scale-100 rotate-x-0 blur-0"
+                  }`}
+                  style={{ top: 0, left: 0 }}
+                />
+                <img
+                  src={amazon}
+                  alt="Amazon Web Services"
+                  className={`absolute transition-all duration-700 ease-in-out transform-gpu ${
+                    showDevOpsLogos
+                      ? "translate-y-0 opacity-100 scale-105 rotate-x-0 drop-shadow-[0_0_10px_rgba(0,255,255,0.7)]"
+                      : "-translate-y-full opacity-0 scale-90 rotate-x-[-12deg]"
+                  }`}
+                  style={{ top: 0, left: 0 }}
+                />
+              </div>
+
+              {/* React → Docker */}
+              <div className="absolute top-[50%] left-[5%] w-[50px] h-[50px] overflow-hidden animate-float perspective-[1000px]">
+                <img
+                  src={reactLogo}
+                  alt="React"
+                  className={`absolute transition-all duration-700 ease-in-out transform-gpu ${
+                    showDevOpsLogos
+                      ? "translate-y-full opacity-0 scale-75 rotate-x-12 blur-sm"
+                      : "translate-y-0 opacity-100 scale-100 rotate-x-0 blur-0"
+                  }`}
+                  style={{ top: 0, left: 0 }}
+                />
+                <img
+                  src={docker}
+                  alt="Docker"
+                  className={`absolute transition-all duration-700 ease-in-out transform-gpu ${
+                    showDevOpsLogos
+                      ? "translate-y-0 opacity-100 scale-105 rotate-x-0 drop-shadow-[0_0_10px_rgba(0,255,255,0.7)]"
+                      : "-translate-y-full opacity-0 scale-90 rotate-x-[-12deg]"
+                  }`}
+                  style={{ top: 0, left: 0 }}
+                />
+              </div>
             </div>
           </div>
         }
