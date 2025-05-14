@@ -121,8 +121,8 @@ const HomePage = () => {
                   className={`absolute transition-all duration-700 ease-in-out transform-gpu
                       ${
                         showDevOpsLogos
-                          ? "translate-y-full opacity-0 scale-75 rotate-x-12 blur-sm"
-                          : "translate-y-0 opacity-100 scale-100 rotate-x-0 blur-0"
+                          ? "translate-y-full translate-x-full opacity-0 scale-75"
+                          : "translate-y-0 opacity-100 scale-100"
                       }`}
                   style={{ top: 0, left: 0 }}
                 />
@@ -134,8 +134,8 @@ const HomePage = () => {
                   className={`absolute transition-all duration-700 ease-in-out transform-gpu
                       ${
                         showDevOpsLogos
-                          ? "translate-y-0 opacity-100 scale-105 rotate-x-0 drop-shadow-[0_0_10px_rgba(0,255,255,0.7)]"
-                          : "-translate-y-full opacity-0 scale-90 rotate-x-[-12deg]"
+                          ? "translate-y-0 translate-x-0 opacity-100 scale-105"
+                          : "translate-y-full translate-x-full opacity-0"
                       }`}
                   style={{ top: 0, left: 0 }}
                 />
@@ -145,20 +145,20 @@ const HomePage = () => {
                 <img
                   src={javaScript}
                   alt="JavaScript"
-                  className={`absolute transition-all duration-700 ease-in-out transform-gpu ${
+                  className={`w-[50px] h-[50px]absolute transition-all duration-700 ease-in-out transform-gpu ${
                     showDevOpsLogos
-                      ? "translate-y-full opacity-0 scale-75 rotate-x-12 blur-sm"
-                      : "translate-y-0 opacity-100 scale-100 rotate-x-0 blur-0"
+                      ? "translate-y-full -translate-x-full opacity-0 scale-75"
+                      : "translate-y-0 opacity-100 scale-100"
                   }`}
                   style={{ top: 0, left: 0 }}
                 />
                 <img
                   src={github}
                   alt="GitHub"
-                  className={`absolute transition-all duration-700 ease-in-out transform-gpu ${
+                  className={`w-[50px] h-[45px] absolute transition-all duration-700 ease-in-out transform-gpu ${
                     showDevOpsLogos
-                      ? "translate-y-0 opacity-100 scale-105 rotate-x-0 drop-shadow-[0_0_10px_rgba(0,255,255,0.7)]"
-                      : "-translate-y-full opacity-0 scale-90 rotate-x-[-12deg]"
+                      ? "translate-y-0 translate-x-0  opacity-100 scale-105"
+                      : "translate-y-full -translate-x-full opacity-0 scale-90"
                   }`}
                   style={{ top: 0, left: 0 }}
                 />
@@ -171,8 +171,8 @@ const HomePage = () => {
                   alt="TypeScript"
                   className={`absolute transition-all duration-700 ease-in-out transform-gpu ${
                     showDevOpsLogos
-                      ? "translate-y-full opacity-0 scale-75 rotate-x-12 blur-sm"
-                      : "translate-y-0 opacity-100 scale-100 rotate-x-0 blur-0"
+                      ? "translate-y-full -translate-x-full opacity-0 scale-75"
+                      : "translate-y-0 opacity-100 scale-100"
                   }`}
                   style={{ top: 0, left: 0 }}
                 />
@@ -181,8 +181,8 @@ const HomePage = () => {
                   alt="Amazon Web Services"
                   className={`absolute transition-all duration-700 ease-in-out transform-gpu ${
                     showDevOpsLogos
-                      ? "translate-y-0 opacity-100 scale-105 rotate-x-0 drop-shadow-[0_0_10px_rgba(0,255,255,0.7)]"
-                      : "-translate-y-full opacity-0 scale-90 rotate-x-[-12deg]"
+                      ? "translate-y-0 translate-x-0  opacity-100 scale-105"
+                      : "translate-y-full -translate-x-full opacity-0 scale-90"
                   }`}
                   style={{ top: 0, left: 0 }}
                 />
@@ -195,8 +195,8 @@ const HomePage = () => {
                   alt="React"
                   className={`absolute transition-all duration-700 ease-in-out transform-gpu ${
                     showDevOpsLogos
-                      ? "translate-y-full opacity-0 scale-75 rotate-x-12 blur-sm"
-                      : "translate-y-0 opacity-100 scale-100 rotate-x-0 blur-0"
+                      ? "translate-y-full translate-x-full opacity-0 scale-75"
+                      : "translate-y-0 opacity-100 scale-100"
                   }`}
                   style={{ top: 0, left: 0 }}
                 />
@@ -205,8 +205,8 @@ const HomePage = () => {
                   alt="Docker"
                   className={`absolute transition-all duration-700 ease-in-out transform-gpu ${
                     showDevOpsLogos
-                      ? "translate-y-0 opacity-100 scale-105 rotate-x-0 drop-shadow-[0_0_10px_rgba(0,255,255,0.7)]"
-                      : "-translate-y-full opacity-0 scale-90 rotate-x-[-12deg]"
+                      ? "translate-y-0 translate-x-0  opacity-100 scale-105 rotate-x-0"
+                      : "translate-y-full translate-x-full opacity-0 scale-90"
                   }`}
                   style={{ top: 0, left: 0 }}
                 />
