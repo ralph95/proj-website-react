@@ -1,17 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../../../assets/images/rocketlogo.png";
+import logo from "../../../assets/images/trixera.png";
 
 const LogoWrapper = styled.div`
   position: absolute;
-  left: 20px;
-  top: 20px; /* Added for better vertical placement */
-  display: flex;
-  align-items: center;
+  left: 25px;
 `;
 
 const LogoImage = styled.img`
-  height: 100px; /* Adjust size as needed */
+  height: 70px; /* Adjust size as needed */
   width: auto;
 `;
 
