@@ -13,11 +13,14 @@ import javaScript from "../assets/images/javascript.png";
 import styled from "styled-components";
 import inversedPolygon from "../assets/svg/inversed-polygon.svg";
 import heroRaf from "../assets/images/hero_raf.png";
+import Container from "../containers/Container";
 
 import docker from "../assets/images/docker.png";
 import jenkins from "../assets/images/jenkins.png";
 import amazon from "../assets/images/amazon.png";
 import github from "../assets/images/github.png";
+import profileImage from "../assets/images/profileImage.png";
+import HoneyComb from "../components/atoms/HoneyComb/HoneyComb";
 
 const StyledPolygon = styled.div`
   height: 0rem;
@@ -79,6 +82,23 @@ const HomePage = () => {
   const toggleTitle = () => {
     setIsDevOps((prev) => !prev);
     setShowDevOpsLogos((prev) => !prev);
+  };
+
+  const containerStyle = {
+    textAlign: "left",
+    lineHeight: "1.6",
+    overflow: "hidden",
+  };
+
+  const circleImgStyle = {
+    float: "left",
+    width: "200px",
+    height: "200px",
+    shapeOutside: "circle()",
+    clipPath: "circle()",
+    borderRadius: "50%",
+    margin: "0 20px 20px 0",
+    objectFit: "cover",
   };
 
   return (
@@ -221,6 +241,46 @@ const HomePage = () => {
         <StyledPolygon />
       </Section>
       <Spacer height="4rem" style={{ backgroundColor: "#0d0d0d" }} />
+      <Container>
+        <HoneyComb />
+      </Container>
+      <Container
+        centerVertically
+        height="auto"
+        style={{ marginTop: "2.5rem" }} // Equal to Tailwind's mt-10
+      >
+        <div className="flex items-center flex-wrap">
+          <div style={containerStyle}>
+            <img src={profileImage} alt="Profile" style={circleImgStyle} />
+            <h1 className="text-4.5xl mt-4 mb-4 font-bold"> About Me</h1>
+            <p style={{ textAlign: "justify" }}>
+              Hello! I’m a developer passionate about creating clean and
+              effective user experiences. I enjoy working with modern web
+              technologies and turning ideas into reality. Let’s build something
+              great together. Lorem ipsum dolor sit amet consectetur adipiscing
+              elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.
+              In id cursus mi pretium tellus duis convallis. Tempus leo eu
+              aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec
+              metus bibendum egestas...Lorem ipsum dolor sit amet consectetur
+              adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem
+              placerat. In id cursus mi pretium tellus duis convallis. Tempus
+              leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla
+              lacus nec metus bibendum egestas. Iaculis massa nisl malesuada
+              lacinia integer nunc posuere. Ut hendrerit semper vel class aptent
+              taciti sociosqu. Ad litora torquent per conubia nostra inceptos
+              himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit.
+              <br /> <br />
+              Quisque faucibus ex sapien vitae pellentesque sem placerat. In id
+              cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed
+              diam urna tempor. Pulvinar vivamus fringilla lacus nec metus
+              bibendum egestas. Iaculis massa nisl malesuada lacinia integer
+              nunc posuere. Ut hendrerit semper vel class aptent taciti
+              sociosqu.
+            </p>
+          </div>
+        </div>
+      </Container>
+
       <Section>
         <Row>
           <Column>
