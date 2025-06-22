@@ -241,9 +241,7 @@ const HomePage = () => {
         <StyledPolygon />
       </Section>
       <Spacer height="4rem" style={{ backgroundColor: "#0d0d0d" }} />
-      <Container>
-        <HoneyComb />
-      </Container>
+
       <Container
         centerVertically
         height="auto"
@@ -279,6 +277,9 @@ const HomePage = () => {
             </p>
           </div>
         </div>
+      </Container>
+      <Container noPadding>
+        <HoneyComb />
       </Container>
 
       <Section>
