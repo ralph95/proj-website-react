@@ -21,6 +21,7 @@ import amazon from "../assets/images/amazon.png";
 import github from "../assets/images/github.png";
 import profileImage from "../assets/images/profileImage.png";
 import HoneyComb from "../components/atoms/HoneyComb/HoneyComb";
+import CardStack from "../components/atoms/CardStack/CardStack";
 
 const StyledPolygon = styled.div`
   height: 0rem;
@@ -241,7 +242,14 @@ const HomePage = () => {
         <StyledPolygon />
       </Section>
       <Spacer height="4rem" style={{ backgroundColor: "#0d0d0d" }} />
-
+      <Container noPadding twoColumn4060>
+        <div className="flex flex-col justify-center">
+          <CardStack></CardStack>
+        </div>
+        <div className="flex justify-center items-center">
+          <HoneyComb />
+        </div>
+      </Container>
       <Container
         centerVertically
         height="auto"
@@ -277,9 +285,6 @@ const HomePage = () => {
             </p>
           </div>
         </div>
-      </Container>
-      <Container noPadding>
-        <HoneyComb />
       </Container>
 
       <Section>
