@@ -19,7 +19,7 @@ const CardStack = () => {
     if (isAnimating) return;
     setIsAnimating(true);
 
-    // Trigger animation class
+    // Trigger animation class ref
     if (topCardRef.current) {
       topCardRef.current.classList.add("card-exit");
     }
