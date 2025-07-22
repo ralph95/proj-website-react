@@ -34,7 +34,7 @@ const CardStack = () => {
       if (topCardRef.current) {
         topCardRef.current.classList.remove("card-exit");
       }
-    }, 500); // match animation duration
+    }, 500);
   };
 
   return (
