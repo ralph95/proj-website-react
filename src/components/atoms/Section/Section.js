@@ -1,16 +1,21 @@
 import React from "react";
 
-const Section = ({ children, heroImage, heroContent }) => {
+const Section = ({ children, heroImage, heroContent, className = "" }) => {
   return (
     <div className="w-full">
       {/* Hero Section */}
       {heroImage && (
         <div
-          className="w-full h-[80vh] md:h-[60vh] lg:h-[50vh] bg-cover bg-center"
+          className={`
+            w-full 
+            bg-cover 
+            bg-center 
+            ${className}
+          `}
           style={{
             backgroundImage: `url(${heroImage})`,
-            backgroundPosition: "center center", // Center the image within the div
-            backgroundSize: "cover", // Make sure the background image covers the entire section
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
           }}
         >
           {/* Overlay content in hero section */}

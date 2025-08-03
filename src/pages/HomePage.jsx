@@ -106,6 +106,7 @@ const HomePage = () => {
     <MainTemplate>
       <Section
         heroImage={heroImage}
+        className="h-[90vh] md:h-[80vh] lg:h-[65vh]"
         heroContent={
           <div
             className="flex flex-col md:flex-row items-center justify-between gap-8 w-full cursor-pointer"
