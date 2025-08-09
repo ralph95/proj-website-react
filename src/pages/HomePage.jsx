@@ -14,6 +14,7 @@ import styled from "styled-components";
 import inversedPolygon from "../assets/svg/inversed-polygon.svg";
 import heroRaf from "../assets/images/hero_raf.png";
 import Container from "../containers/Container";
+import { motion } from "framer-motion";
 
 import docker from "../assets/images/docker.png";
 import jenkins from "../assets/images/jenkins.png";
@@ -113,7 +114,18 @@ const HomePage = () => {
             onClick={toggleTitle}
           >
             {/* Left Side Text */}
-            <div className="text-left pt-[5px] sm:text-left text-center max-w-md md:max-w-[45%]">
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 25,
+                delay: 0.3,
+                duration: 1.2,
+              }}
+              className="text-left pt-[5px] sm:text-left text-center max-w-md md:max-w-[45%]"
+            >
               <Spacer />
               <div className="block md:hidden">
                 <Spacer />
@@ -127,10 +139,21 @@ const HomePage = () => {
                   ? "As a DevOps Engineer, I automate processes and optimize workflows to enhance system reliability and scalability. I focus on continuous integration and delivery for efficient software deployment."
                   : "As a web developer, I design and build websites that are fast, responsive, and user-friendly. I work with both front-end and back-end technologies to create seamless and dynamic online experiences."}
               </p>
-            </div>
+            </motion.div>
 
             {/* Right Side Chibi Image + Floating Logos */}
-            <div className="relative max-w-[300px] w-full pb-[5px]">
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 25,
+                delay: 0.3,
+                duration: 1.2,
+              }}
+              className="relative max-w-[300px] w-full pb-[5px]"
+            >
               <img
                 src={heroRaf}
                 alt="Hero Raf"
@@ -236,7 +259,7 @@ const HomePage = () => {
                   style={{ top: 0, left: 0 }}
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
         }
       >
