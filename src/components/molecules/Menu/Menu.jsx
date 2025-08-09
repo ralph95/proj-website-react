@@ -64,8 +64,8 @@ const MenuWrapper = styled.nav`
     width: 100%;
     z-index: 50;
 
-    ${(props) =>
-      props.isOpen
+    ${({ $isOpen }) =>
+      $isOpen
         ? css`
             display: flex;
           `
@@ -81,7 +81,7 @@ const Menu = () => {
   return (
     <Wrapper>
       <MenuButton onClick={() => setIsOpen(!isOpen)}>☰ Menu</MenuButton>
-      <MenuWrapper isOpen={isOpen}>
+      <MenuWrapper $isOpen={isOpen}>
         <a href="#about">Projects</a>
         <a href="#services">Resume</a>
         <a href="#contact">Github</a>
