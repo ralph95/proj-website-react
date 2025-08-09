@@ -14,6 +14,7 @@ import styled from "styled-components";
 import inversedPolygon from "../assets/svg/inversed-polygon.svg";
 import heroRaf from "../assets/images/hero_raf.png";
 import Container from "../containers/Container";
+import Spline from "@splinetool/react-spline";
 
 import docker from "../assets/images/docker.png";
 import jenkins from "../assets/images/jenkins.png";
@@ -104,6 +105,19 @@ const HomePage = () => {
 
   return (
     <MainTemplate>
+      <Section
+        heroImage={heroImage}
+        className="h-[90vh] md:h-[80vh] lg:h-[65vh]"
+        heroContent={
+          <div className="flex flex-col md:flex-row items-center justify-between w-full h-full gap-8">
+            <Spline scene="https://prod.spline.design/zN5TrUWtgUlwm0r3/scene.splinecode" />
+          </div>
+        }
+      >
+        <StyledPolygon />
+      </Section>
+
+      <Spacer height="4rem" style={{ backgroundColor: "#0d0d0d" }} />
       <Section
         heroImage={heroImage}
         className="h-[90vh] md:h-[80vh] lg:h-[65vh]"
@@ -239,9 +253,7 @@ const HomePage = () => {
             </div>
           </div>
         }
-      >
-        <StyledPolygon />
-      </Section>
+      ></Section>
       <Spacer height="4rem" style={{ backgroundColor: "#0d0d0d" }} />
       <Container noPadding twoColumn4060>
         <div className="flex flex-col justify-center">
