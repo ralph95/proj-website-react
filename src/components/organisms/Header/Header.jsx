@@ -6,6 +6,7 @@ import PrimaryButton from "../../atoms/PrimaryButton/PrimaryButton";
 import Menu from "../../molecules/Menu/Menu";
 import ButtonWrapper from "../../molecules/ButtonWrapper/ButtonWrapper";
 import LogoWrapper from "../../molecules/LogoWrapper/LogoWrapper";
+import { motion } from "framer-motion";
 
 // Styled-component for the header
 const StyledHeader = styled.header`
@@ -20,25 +21,21 @@ const StyledHeader = styled.header`
   &::after {
     content: "";
     position: absolute;
-    bottom: calc(
-      -1 * 2.0625rem
-    ); /* Dynamically position polygon based on its height */
+    /* Pull the polygon up by 1px so it overlaps header background */
+    bottom: calc(-1 * 2.0625rem + 1px);
     left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
+    transform: translateX(-50%);
     width: 100%;
     height: 2.0625rem;
     background: #0d0d0d;
 
-    /* Use imported SVG for masking */
     -webkit-mask-image: url(${polygon});
     mask-image: url(${polygon});
-
-    /* Ensure no repeat of the mask image */
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
     mask-position: center;
-    background-size: contain; /* Scale polygon within its container */
+    background-size: contain;
   }
 
   /* Media queries to adjust the width based on screen size */
@@ -81,13 +78,25 @@ const HeaderContainer = styled.div`
 
 const Header = () => {
   return (
-    <StyledHeader>
-      <HeaderContainer>
-        <LogoWrapper />
-        <Menu />
-        <ButtonWrapper />
-      </HeaderContainer>
-    </StyledHeader>
+    <motion.div
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        type: "spring",
+        stiffness: 100,
+        damping: 25,
+        delay: 0.3,
+        duration: 1.2,
+      }}
+    >
+      <StyledHeader>
+        <HeaderContainer>
+          <LogoWrapper />
+          <Menu />
+          <ButtonWrapper />
+        </HeaderContainer>
+      </StyledHeader>
+    </motion.div>
   );
 };
 

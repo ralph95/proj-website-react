@@ -115,8 +115,8 @@ const HomePage = () => {
           >
             {/* Left Side Text */}
             <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{
                 type: "spring",
                 stiffness: 100,
@@ -143,8 +143,8 @@ const HomePage = () => {
 
             {/* Right Side Chibi Image + Floating Logos */}
             <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{
                 type: "spring",
                 stiffness: 100,
@@ -262,10 +262,21 @@ const HomePage = () => {
             </motion.div>
           </div>
         }
+      ></Section>
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          type: "spring",
+          stiffness: 100,
+          damping: 25,
+          delay: 0.3,
+          duration: 1.2,
+        }}
       >
         <StyledPolygon />
-      </Section>
-      <Spacer height="4rem" style={{ backgroundColor: "#0d0d0d" }} />
+        <Spacer height="4rem" style={{ backgroundColor: "#0d0d0d" }} />
+      </motion.div>
       <Container noPadding twoColumn4060>
         <div className="flex flex-col justify-center">
           <CardStack></CardStack>
