@@ -110,7 +110,7 @@ const HomePage = () => {
         className="h-[90vh] md:h-[80vh] lg:h-[65vh]"
         heroContent={
           <div className="flex flex-col md:flex-row items-center justify-between w-full h-full gap-8">
-            <Spline scene="https://prod.spline.design/zN5TrUWtgUlwm0r3/scene.splinecode" />
+            <Spline scene="https://prod.spline.design/ikNg62r7SbCRjZ0N/scene.splinecode" />
           </div>
         }
       >
