@@ -10,7 +10,6 @@ COPY . .
 # Install dependencies
 RUN npm install
 
-#Change Port
 ENV PORT=3000
 EXPOSE 3000
 
