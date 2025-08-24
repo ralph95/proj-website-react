@@ -29,8 +29,8 @@ const StyledHeader = styled.header`
     height: 2.0625rem;
     background: #0d0d0d;
 
-    -webkit-mask-image: url(${polygon});
-    mask-image: url(${polygon});
+    -webkit-mask-image: url("${polygon}");
+    mask-image: url("${polygon}");
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;

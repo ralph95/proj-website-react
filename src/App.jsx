@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components"; // Import ThemeProvider from 
 import { theme } from "./styles/theme"; // Import your theme settings
 import GlobalStyles from "./styles/GlobalStyles"; // Import global styles
 import "./styles/global.css"; // Ensure the correct path to your global CSS
+import "./index.css";
 
 function App() {
   return (

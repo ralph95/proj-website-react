@@ -42,8 +42,8 @@ const StyledPolygon = styled.div`
     width: 100%; /* Maintain responsive width */
     height: 2.0625rem; /* Default height */
     background: #0d0d0d;
-    -webkit-mask-image: url(${inversedPolygon});
-    mask-image: url(${inversedPolygon});
+    -webkit-mask-image: url("${inversedPolygon}");
+    mask-image: url("${inversedPolygon}");
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
