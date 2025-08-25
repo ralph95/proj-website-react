@@ -44,6 +44,7 @@ const MenuWrapper = styled.nav`
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid #d1d5db;
 
     &:hover {
       background-color: #6b7280;
