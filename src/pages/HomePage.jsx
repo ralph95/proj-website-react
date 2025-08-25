@@ -327,7 +327,7 @@ const HomePage = () => {
         }}
       >
         <StyledPolygon />
-        <Spacer height="4rem" style={{ backgroundColor: "#0d0d0d" }} />
+        <Spacer height="2.75rem" style={{ backgroundColor: "#0d0d0d" }} />
         <StyledInvesedPolygon />
       </motion.div>
       <Container noPadding twoColumn4060>
@@ -339,7 +339,7 @@ const HomePage = () => {
         </div>
       </Container>
       <StyledPolygon />
-      <Spacer height="4rem" style={{ backgroundColor: "#0d0d0d" }} />
+      <Spacer height="2rem" style={{ backgroundColor: "#0d0d0d" }} />
       <StyledInvesedPolygon />
       <Container
         centerVertically
@@ -378,7 +378,7 @@ const HomePage = () => {
         </div>
       </Container>
       <StyledPolygon />
-      <Spacer height="4rem" style={{ backgroundColor: "#0d0d0d" }} />
+      <Spacer height="2rem" style={{ backgroundColor: "#0d0d0d" }} />
       <StyledInvesedPolygon />
       <Section>
         <Row>
