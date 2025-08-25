@@ -74,6 +74,15 @@ const HeaderContainer = styled.div`
   justify-content: center; /* Center the menu */
   align-items: center;
   position: relative; /* Ensure logo and button position doesn't affect centering */
+
+  /* Mobile view */
+  @media (max-width: 480px) {
+    justify-content: space-between; /* space out the two items */
+    flex-direction: row; /* keep them side by side */
+    justify-content: center;
+    padding-left: 100px;
+    margin-left: 70px;
+  }
 `;
 
 const Header = () => {

@@ -11,7 +11,11 @@ const Wrapper = styled.div`
 const ButtonWrapper = () => {
   return (
     <Wrapper>
-      <PrimaryButton>About Me</PrimaryButton>
+      {/* Hide on mobile, show on md+ screens */}
+      <div className="hidden md:flex space-x-4">
+        <PrimaryButton>Login</PrimaryButton>
+        <PrimaryButton>Register</PrimaryButton>
+      </div>
     </Wrapper>
   );
 };

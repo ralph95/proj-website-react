@@ -106,7 +106,6 @@ const HomePage = () => {
   return (
     <MainTemplate>
       <Section
-        heroImage={heroImage}
         className="h-[90vh] md:h-[80vh] lg:h-[65vh]"
         heroContent={
           <div
