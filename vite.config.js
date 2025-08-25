@@ -10,6 +10,6 @@ export default defineConfig({
   },
   preview: {
     port: 4173, // optional, default port
-    allowedHosts: ["home.philippinesheadline.com"], // allow your domain
+    allowedHosts: ["home.philippinesheadline.com"],
   },
 });
