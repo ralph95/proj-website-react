@@ -6,6 +6,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    host: true,
+    host: true, // allows dev server on network
+  },
+  preview: {
+    port: 4173, // optional, default port
+    allowedHosts: ["home.philippinesheadline.com"], // allow your domain
   },
 });
