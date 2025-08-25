@@ -81,7 +81,7 @@ const HeaderContainer = styled.div`
     flex-direction: row; /* keep them side by side */
     justify-content: center;
     padding-left: 100px;
-    margin-left: 70px;
+    margin-left: 50px;
   }
 `;
 
