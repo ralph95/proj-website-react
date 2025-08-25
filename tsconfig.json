@@ -13,7 +13,10 @@
     "strict": true,
     "skipLibCheck": true,
     "types": ["vite/client"],
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "include": ["src", "vite.config.ts"]
 }

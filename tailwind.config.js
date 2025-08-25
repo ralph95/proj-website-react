@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
@@ -5,6 +6,12 @@ module.exports = {
       colors: {
         primary: "#845BB3",
         secondary: "#A0D2EB",
+
+        // Theme tokens
+        border: "oklch(var(--border) / <alpha-value>)",
+        background: "oklch(var(--background) / <alpha-value>)",
+        foreground: "oklch(var(--foreground) / <alpha-value>)",
+        ring: "oklch(var(--ring) / <alpha-value>)",
       },
       fontSize: {
         h1: "2.5rem",

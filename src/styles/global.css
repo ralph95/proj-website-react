@@ -1,27 +1,27 @@
-/* Global or Component CSS */
+@import "tw-animate-css";
 
-/* Section styling */
-/* .section {
-  padding: 20px;
-  margin: 10px 0;
-  background-color: #F3F3F3;
-} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------
+   Global or Component CSS
+---------------------------- */
 
 /* Row styling */
 .row {
   display: flex;
-  flex-wrap: wrap; /* Makes the content wrap when needed */
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
-/* Column styling (items inside the row) */
+/* Column styling */
 .column {
   flex: 1;
   padding: 10px;
-  min-width: 200px; /* Ensure columns stack on smaller screens */
+  min-width: 200px;
 }
 
-/* Responsive media query for larger screens */
 @media (min-width: 768px) {
   .row {
     flex-direction: row;
@@ -30,11 +30,11 @@
 
 @media (min-width: 1024px) {
   .column {
-    min-width: 300px; /* Adjust column size for larger screens */
+    min-width: 300px;
   }
 }
 
-/* src/styles/global.css */
+/* Typography */
 body {
   @apply text-gray-900;
 }
@@ -45,4 +45,32 @@ h1 {
 
 h2 {
   @apply text-2xl text-secondary;
+}
+
+/* ---------------------------
+   THEME + DARK MODE
+---------------------------- */
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: 1 0 0;
+  --foreground: 0.145 0 0;
+  --border: 0.9 0 0;
+  --ring: 0.5 0 0;
+}
+
+.dark {
+  --background: 0.145 0 0;
+  --foreground: 0.985 0 0;
+  --border: 0.3 0 0;
+  --ring: 0.7 0 0;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
