@@ -101,7 +101,7 @@ const Menu = () => {
       <MenuWrapper $isOpen={isOpen}>
         <a href="#about">Projects</a>
         <a href="#services">Resume</a>
-        <a href="#contact">Github</a>
+        <a href="https://github.com/ralph95">Github</a>
 
         <MobileOnly>
           <a href="#contact">Login</a>
