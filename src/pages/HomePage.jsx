@@ -12,6 +12,7 @@ import htmlLogo from "../assets/images/html.png";
 import javaScript from "../assets/images/javascript.png";
 import styled from "styled-components";
 import inversedPolygon from "../assets/svg/inversed-polygon.svg";
+import polygon from "../assets/svg/polygon.svg";
 import heroRaf from "../assets/images/hero_raf.png";
 import Container from "../containers/Container";
 import { motion } from "framer-motion";
@@ -71,7 +72,59 @@ const StyledPolygon = styled.div`
     &::after {
       width: 75%;
       height: 6.25rem; /* Adjust height for mobile screens */
-      bottom: calc(-2 * 1.5rem); /* Adjust bottom dynamically */
+      bottom: calc(-2 * 1.25rem); /* Adjust bottom dynamically */
+    }
+  }
+`;
+
+const StyledInvesedPolygon = styled.div`
+  height: 0rem;
+  background-color: #0d0d0d;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0;
+  margin: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0; /* Ensure it's anchored to the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* Maintain responsive width */
+    height: 2.0625rem; /* Default height */
+    background: #0d0d0d;
+    -webkit-mask-image: url("${polygon}");
+    mask-image: url("${polygon}");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    background-size: contain;
+  }
+
+  @media (max-width: 1200px) {
+    &::after {
+      width: 50%; /* Adjust width for smaller screens */
+      height: 1.75rem; /* Adjust height for proportional scaling */
+      bottom: 0; /* Keep it anchored to the bottom */
+    }
+  }
+
+  @media (max-width: 768px) {
+    &::after {
+      width: 25%; /* Further adjust width */
+      height: 1.75rem; /* Further adjust height */
+      bottom: calc(-1 * 0.56rem); /* Adjust bottom dynamically */
+    }
+  }
+
+  @media (max-width: 480px) {
+    &::after {
+      width: 75%;
+      height: 6.25rem; /* Adjust height for mobile screens */
+      top: calc(-2 * 1.25rem); /* Adjust bottom dynamically */
     }
   }
 `;
@@ -275,6 +328,7 @@ const HomePage = () => {
       >
         <StyledPolygon />
         <Spacer height="4rem" style={{ backgroundColor: "#0d0d0d" }} />
+        <StyledInvesedPolygon />
       </motion.div>
       <Container noPadding twoColumn4060>
         <div className="flex flex-col justify-center">
@@ -284,6 +338,9 @@ const HomePage = () => {
           <HoneyComb />
         </div>
       </Container>
+      <StyledPolygon />
+      <Spacer height="4rem" style={{ backgroundColor: "#0d0d0d" }} />
+      <StyledInvesedPolygon />
       <Container
         centerVertically
         height="auto"
@@ -320,7 +377,9 @@ const HomePage = () => {
           </div>
         </div>
       </Container>
-
+      <StyledPolygon />
+      <Spacer height="4rem" style={{ backgroundColor: "#0d0d0d" }} />
+      <StyledInvesedPolygon />
       <Section>
         <Row>
           <Column>
