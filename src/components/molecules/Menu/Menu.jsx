@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
+import SignupModal from "../../organisms/Modal/SignUpModal/SignupModal";
 
 const Wrapper = styled.div`
   display: flex;
@@ -95,6 +96,7 @@ const MobileOnly = styled.div`
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <Wrapper>
@@ -106,9 +108,18 @@ const Menu = () => {
 
         <MobileOnly>
           <a href="#contact">Login</a>
-          <a href="#contact">Register</a>
+          <a
+            href="#register" // can be any href
+            onClick={(e) => {
+              e.preventDefault(); // prevent default anchor navigation
+              setIsModalOpen(true); // open modal
+            }}
+          >
+            Register
+          </a>
         </MobileOnly>
       </MenuWrapper>
+      <SignupModal open={isModalOpen} onOpenChange={setIsModalOpen} />
     </Wrapper>
   );
 };
