@@ -5,15 +5,14 @@ import Section from "../components/atoms/Section/Section";
 import Spacer from "../components/atoms/Spacer/Spacer";
 import Row from "../components/atoms/Row/Row";
 import Column from "../components/atoms/Column/Column";
-import heroImage from "../assets/images/hero-banner.jpg";
 import reactLogo from "../assets/images/react-logo.png";
 import typeScript from "../assets/images/typescript.png";
-import htmlLogo from "../assets/images/html.png";
+import htmlLogo from "../assets/images/html.webp";
 import javaScript from "../assets/images/javascript.png";
 import styled from "styled-components";
 import inversedPolygon from "../assets/svg/inversed-polygon.svg";
 import polygon from "../assets/svg/polygon.svg";
-import heroRaf from "../assets/images/hero_raf.png";
+import heroRaf from "../assets/images/hero_raf.webp";
 import Container from "../containers/Container";
 import { motion } from "framer-motion";
 
