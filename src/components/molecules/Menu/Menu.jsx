@@ -109,10 +109,10 @@ const Menu = () => {
         <MobileOnly>
           <a href="#contact">Login</a>
           <a
-            href="#register" // can be any href
+            href="#register"
             onClick={(e) => {
-              e.preventDefault(); // prevent default anchor navigation
-              setIsModalOpen(true); // open modal
+              e.preventDefault();
+              setIsModalOpen(true);
             }}
           >
             Register
