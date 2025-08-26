@@ -2,7 +2,7 @@
 import React, { useState } from "react"; // ✅ add useState
 import styled from "styled-components";
 import PrimaryButton from "../../atoms/PrimaryButton/PrimaryButton";
-import SignupModal from "../../organisms/Modal/SignUpModal/SignupModal";
+import SignUpModal from "../../organisms/Modal/SignUpModal/SignUpModal";
 
 const Wrapper = styled.div`
   position: absolute;
@@ -23,7 +23,7 @@ const ButtonWrapper = () => {
       </div>
 
       {/* Signup Modal */}
-      <SignupModal open={isModalOpen} onOpenChange={setIsModalOpen} />
+      <SignUpModal open={isModalOpen} onOpenChange={setIsModalOpen} />
     </Wrapper>
   );
 };

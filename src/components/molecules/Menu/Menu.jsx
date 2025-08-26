@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
-import SignupModal from "../../organisms/Modal/SignUpModal/SignupModal";
+import SignUpModal from "../../organisms/Modal/SignUpModal/SignUpModal";
 
 const Wrapper = styled.div`
   display: flex;
@@ -119,7 +119,7 @@ const Menu = () => {
           </a>
         </MobileOnly>
       </MenuWrapper>
-      <SignupModal open={isModalOpen} onOpenChange={setIsModalOpen} />
+      <SignUpModal open={isModalOpen} onOpenChange={setIsModalOpen} />
     </Wrapper>
   );
 };
