@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import ReactLogo from "@/assets/images/react-logo.png";
 
-export default function SignupModal({
+export default function SignUpModal({
   open,
   onOpenChange,
 }: {
