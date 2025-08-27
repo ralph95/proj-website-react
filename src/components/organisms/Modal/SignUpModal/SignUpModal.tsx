@@ -81,7 +81,14 @@ export default function SignUpModal({
         <div className="before:bg-border after:bg-border flex items-center gap-3 before:h-px before:flex-1 after:h-px after:flex-1">
           <span className="text-muted-foreground text-xs">Or</span>
         </div>
-        <Button variant="outline">Continue with Google</Button>
+        <Button variant="outline" className="flex items-center space-x-2">
+          <img
+            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+            alt="Google logo"
+            className="h-5 w-5"
+          />
+          <span>Continue with Google</span>
+        </Button>
         <p className="text-muted-foreground text-center text-xs">
           By signing up you agree to our{" "}
           <a className="underline hover:no-underline" href="#">
