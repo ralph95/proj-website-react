@@ -50,7 +50,7 @@ export default function SigninModal({
               <Label htmlFor={`${id}-email`}>Email</Label>
               <Input
                 id={`${id}-email`}
-                placeholder="subha9.5roy350@gmail.com"
+                placeholder="mangkanor@gmail.com"
                 type="email"
                 required
               />
