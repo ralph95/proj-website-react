@@ -9,3 +9,9 @@ services:
       - "3000:3000" # Map host:container
     container_name: react-app-container
     restart: always
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
