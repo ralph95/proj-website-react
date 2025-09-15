@@ -1,17 +1,20 @@
 import React from "react";
 import "./styles/tailwind.css";
-import HomePage from "./pages/HomePage"; // Import your main component
-import { ThemeProvider } from "styled-components"; // Import ThemeProvider from styled-components
-import { theme } from "./styles/theme"; // Import your theme settings
-import GlobalStyles from "./styles/GlobalStyles"; // Import global styles
-import "./styles/global.css"; // Ensure the correct path to your global CSS
+import { ThemeProvider } from "styled-components";
+import { theme } from "./styles/theme";
+import GlobalStyles from "./styles/GlobalStyles";
+import "./styles/global.css";
 import "./index.css";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import HomePage from "./pages/HomePage";
+import DashBoardPage from "./pages/DashBoardPage"; // Example second page
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles /> {/* Apply global styles */}
-      {/* Diagonal Grid Light Background */}
+      <GlobalStyles />
       <div className="min-h-screen w-full bg-[#fafafa] relative text-gray-900">
         <div
           className="absolute inset-0 z-0 pointer-events-none"
@@ -24,9 +27,13 @@ function App() {
           }}
         />
 
-        {/* Your main content on top */}
         <div className="relative z-10">
-          <HomePage />
+          <Router>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/main" element={<DashBoardPage />} />
+            </Routes>
+          </Router>
         </div>
       </div>
     </ThemeProvider>

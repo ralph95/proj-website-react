@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import ReactLogo from "@/assets/images/react-logo.png";
 import { APIEXECUTE } from "@/lib/api";
+import { useNavigate } from "react-router-dom";
 
 export default function SigninModal({
   open,
@@ -21,6 +22,7 @@ export default function SigninModal({
   onOpenChange: (open: boolean) => void;
 }) {
   const id = useId();
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,6 +44,7 @@ export default function SigninModal({
 
       if (data.token) {
         localStorage.setItem("token", data.token);
+        navigate("/main");
       }
 
       // close modal
