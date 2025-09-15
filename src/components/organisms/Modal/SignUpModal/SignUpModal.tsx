@@ -46,7 +46,7 @@ export default function SignUpModal({
         <form className="space-y-5">
           <div className="space-y-4">
             <div className="*:not-first:mt-2">
-              <Label htmlFor={`${id}-name`}>Full name</Label>
+              <Label htmlFor={`${id}-name`}>Name</Label>
               <Input
                 id={`${id}-name`}
                 placeholder="Mang Kanor"
@@ -68,6 +68,15 @@ export default function SignUpModal({
               <Input
                 id={`${id}-password`}
                 placeholder="Enter your password"
+                type="password"
+                required
+              />
+            </div>
+            <div className="*:not-first:mt-2">
+              <Label htmlFor={`${id}-confirm-password`}>Confirm Password</Label>
+              <Input
+                id={`${id}-confirm-password`}
+                placeholder="Confirm your password"
                 type="password"
                 required
               />
