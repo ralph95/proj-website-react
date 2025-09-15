@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useId, useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import ReactLogo from "@/assets/images/react-logo.png";
+import { APIEXECUTE } from "@/lib/api";
 
 export default function SignUpModal({
   open,
@@ -19,6 +20,39 @@ export default function SignUpModal({
   onOpenChange: (open: boolean) => void;
 }) {
   const id = useId();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConfirm, setPasswordConfirm] = useState("");
+  const [name, setName] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    try {
+      const data = await APIEXECUTE("/register", {
+        method: "POST",
+        body: JSON.stringify({ name, email, password, passwordConfirm }),
+      });
+
+      console.log("Login success:", data);
+
+      if (data.token) {
+        localStorage.setItem("token", data.token);
+      }
+
+      // close modal
+      onOpenChange(false);
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -43,7 +77,7 @@ export default function SignUpModal({
           </DialogHeader>
         </div>
 
-        <form className="space-y-5">
+        <form className="space-y-5" onSubmit={handleSubmit}>
           <div className="space-y-4">
             <div className="*:not-first:mt-2">
               <Label htmlFor={`${id}-name`}>Name</Label>
@@ -52,6 +86,8 @@ export default function SignUpModal({
                 placeholder="Mang Kanor"
                 type="text"
                 required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="*:not-first:mt-2">
@@ -61,6 +97,8 @@ export default function SignUpModal({
                 placeholder="mangkanor@gmail.com"
                 type="email"
                 required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="*:not-first:mt-2">
@@ -70,6 +108,8 @@ export default function SignUpModal({
                 placeholder="Enter your password"
                 type="password"
                 required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="*:not-first:mt-2">
@@ -79,25 +119,27 @@ export default function SignUpModal({
                 placeholder="Confirm your password"
                 type="password"
                 required
+                value={passwordConfirm}
+                onChange={(e) => setPasswordConfirm(e.target.value)}
               />
             </div>
           </div>
-          <Button type="button" className="w-full text-white">
+          <Button type="submit" className="w-full text-white">
             Sign up
           </Button>
-        </form>
 
-        <div className="before:bg-border after:bg-border flex items-center gap-3 before:h-px before:flex-1 after:h-px after:flex-1">
-          <span className="text-muted-foreground text-xs">Or</span>
-        </div>
-        <Button variant="outline" className="flex items-center space-x-2">
-          <img
-            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
-            alt="Google logo"
-            className="h-5 w-5"
-          />
-          <span>Continue with Google</span>
-        </Button>
+          <div className="before:bg-border after:bg-border flex items-center gap-3 before:h-px before:flex-1 after:h-px after:flex-1">
+            <span className="text-muted-foreground text-xs">Or</span>
+          </div>
+          <Button variant="outline" className="flex items-center space-x-2">
+            <img
+              src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+              alt="Google logo"
+              className="h-5 w-5"
+            />
+            <span>Continue with Google</span>
+          </Button>
+        </form>
         <p className="text-muted-foreground text-center text-xs">
           By signing up you agree to our{" "}
           <a className="underline hover:no-underline" href="#">

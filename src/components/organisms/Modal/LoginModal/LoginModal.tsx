@@ -125,18 +125,19 @@ export default function SigninModal({
           <Button type="submit" className="w-full text-white">
             Sign in
           </Button>
+
+          <div className="before:bg-border after:bg-border flex items-center gap-3 before:h-px before:flex-1 after:h-px after:flex-1">
+            <span className="text-muted-foreground text-xs">Or</span>
+          </div>
+          <Button variant="outline" className="flex items-center space-x-2">
+            <img
+              src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+              alt="Google logo"
+              className="h-5 w-5"
+            />
+            <span>Login with Google</span>
+          </Button>
         </form>
-        <div className="before:bg-border after:bg-border flex items-center gap-3 before:h-px before:flex-1 after:h-px after:flex-1">
-          <span className="text-muted-foreground text-xs">Or</span>
-        </div>
-        <Button variant="outline" className="flex items-center space-x-2">
-          <img
-            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
-            alt="Google logo"
-            className="h-5 w-5"
-          />
-          <span>Login with Google</span>
-        </Button>
       </DialogContent>
     </Dialog>
   );
