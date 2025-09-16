@@ -9,7 +9,8 @@ import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
-import DashBoardPage from "./pages/DashBoardPage"; // Example second page
+import DashBoardPage from "./pages/DashBoardPage";
+import CheckMailVerification from "./pages/CheckMailVerification";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/main" element={<DashBoardPage />} />
+              <Route path="/check-email" element={<CheckMailVerification />} />
             </Routes>
           </Router>
         </div>

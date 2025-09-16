@@ -13,6 +13,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import ReactLogo from "@/assets/images/react-logo.png";
 import { APIEXECUTE } from "@/lib/api";
 import { useNavigate } from "react-router-dom";
+import ClassicLoader from "@/components/atoms/Loader/Loader"; // ✅ import loader
 
 export default function SigninModal({
   open,
@@ -47,8 +48,7 @@ export default function SigninModal({
         navigate("/main");
       }
 
-      // close modal
-      onOpenChange(false);
+      onOpenChange(false); // ✅ close modal only once
     } catch (err: any) {
       setError(err.message);
     } finally {
@@ -58,89 +58,99 @@ export default function SigninModal({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent>
-        {/* ... */}
-        <form className="space-y-5" onSubmit={handleSubmit}>
-          <div className="flex flex-col items-center gap-2">
-            <div
-              className="flex size-11 shrink-0 items-center justify-center rounded-full border"
-              aria-hidden="true"
-            >
+      <DialogContent
+        className={loading ? "bg-transparent shadow-none border-none" : ""}
+      >
+        {loading ? (
+          // ✅ show loader while waiting for server
+          <div className="flex justify-center items-center py-10">
+            <ClassicLoader />
+          </div>
+        ) : (
+          <>
+            <form className="space-y-5" onSubmit={handleSubmit}>
+              <div className="flex flex-col items-center gap-2">
+                <div
+                  className="flex size-11 shrink-0 items-center justify-center rounded-full border"
+                  aria-hidden="true"
+                >
+                  <img
+                    src={ReactLogo}
+                    alt="logo"
+                    className="h-8 w-8 rounded-full"
+                  />
+                </div>
+                <DialogHeader>
+                  <DialogTitle
+                    className="sm:text-center"
+                    style={{ color: "#845BB3" }}
+                  >
+                    Welcome back
+                  </DialogTitle>
+                  <DialogDescription className="sm:text-center">
+                    Enter your credentials to login to your account.
+                  </DialogDescription>
+                </DialogHeader>
+              </div>
+
+              <div className="space-y-4">
+                <div className="*:not-first:mt-2">
+                  <Label htmlFor={`${id}-email`}>Email</Label>
+                  <Input
+                    id={`${id}-email`}
+                    placeholder="mangkanor@gmail.com"
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="*:not-first:mt-2">
+                  <Label htmlFor={`${id}-password`}>Password</Label>
+                  <Input
+                    id={`${id}-password`}
+                    placeholder="Enter your password"
+                    type="password"
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              <div className="flex justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <Checkbox id={`${id}-remember`} />
+                  <Label
+                    htmlFor={`${id}-remember`}
+                    className="text-muted-foreground font-normal"
+                  >
+                    Remember me
+                  </Label>
+                </div>
+                <a className="text-sm underline hover:no-underline" href="#">
+                  Forgot password?
+                </a>
+              </div>
+
+              <Button type="submit" className="w-full text-white">
+                Sign in
+              </Button>
+            </form>
+
+            <div className="before:bg-border after:bg-border flex items-center gap-3 before:h-px before:flex-1 after:h-px after:flex-1">
+              <span className="text-muted-foreground text-xs">Or</span>
+            </div>
+            <Button variant="outline" className="flex items-center space-x-2">
               <img
-                src={ReactLogo}
-                alt="logo"
-                className="h-8 w-8 rounded-full"
+                src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+                alt="Google logo"
+                className="h-5 w-5"
               />
-            </div>
-            <DialogHeader>
-              <DialogTitle
-                className="sm:text-center "
-                style={{ color: "#845BB3" }}
-              >
-                Welcome back
-              </DialogTitle>
-              <DialogDescription className="sm:text-center">
-                Enter your credentials to login to your account.
-              </DialogDescription>
-            </DialogHeader>
-          </div>
-          <div className="space-y-4">
-            <div className="*:not-first:mt-2">
-              <Label htmlFor={`${id}-email`}>Email</Label>
-              <Input
-                id={`${id}-email`}
-                placeholder="mangkanor@gmail.com"
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="*:not-first:mt-2">
-              <Label htmlFor={`${id}-password`}>Password</Label>
-              <Input
-                id={`${id}-password`}
-                placeholder="Enter your password"
-                type="password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-          </div>
-
-          <div className="flex justify-between gap-2">
-            <div className="flex items-center gap-2">
-              <Checkbox id={`${id}-remember`} />
-              <Label
-                htmlFor={`${id}-remember`}
-                className="text-muted-foreground font-normal"
-              >
-                Remember me
-              </Label>
-            </div>
-            <a className="text-sm underline hover:no-underline" href="#">
-              Forgot password?
-            </a>
-          </div>
-
-          {/* change type to submit so it fires onSubmit */}
-          <Button type="submit" className="w-full text-white">
-            Sign in
-          </Button>
-
-          <div className="before:bg-border after:bg-border flex items-center gap-3 before:h-px before:flex-1 after:h-px after:flex-1">
-            <span className="text-muted-foreground text-xs">Or</span>
-          </div>
-          <Button variant="outline" className="flex items-center space-x-2">
-            <img
-              src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
-              alt="Google logo"
-              className="h-5 w-5"
-            />
-            <span>Login with Google</span>
-          </Button>
-        </form>
+              <span>Login with Google</span>
+            </Button>
+          </>
+        )}
       </DialogContent>
     </Dialog>
   );
