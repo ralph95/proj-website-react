@@ -16,8 +16,6 @@ code {
     monospace;
 }
 
-
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -74,13 +72,29 @@ code {
   }
 }
 
-
-
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Ensure ALL text elements use foreground color */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a,
+  button,
+  label,
+  li,
+  strong {
+    @apply text-foreground;
   }
 }
