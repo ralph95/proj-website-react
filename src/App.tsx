@@ -6,11 +6,17 @@ import GlobalStyles from "./styles/GlobalStyles";
 import "./styles/global.css";
 import "./index.css";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
 import DashBoardPage from "./pages/DashBoardPage";
 import CheckMailVerification from "./pages/CheckMailVerification";
+import ProtectedRoute from "./components/routes/ProtectedRoute"; // ✅ import here
 
 function App() {
   return (
@@ -31,9 +37,22 @@ function App() {
         <div className="relative z-10">
           <Router>
             <Routes>
+              {/* Public routes */}
               <Route path="/" element={<HomePage />} />
-              <Route path="/main" element={<DashBoardPage />} />
               <Route path="/check-email" element={<CheckMailVerification />} />
+
+              {/* Protected routes */}
+              <Route
+                path="/main"
+                element={
+                  <ProtectedRoute>
+                    <DashBoardPage />
+                  </ProtectedRoute>
+                }
+              />
+
+              {/* Catch-all → redirect to home */}
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Router>
         </div>
