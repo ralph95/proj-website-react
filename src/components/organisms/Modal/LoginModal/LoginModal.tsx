@@ -59,7 +59,11 @@ export default function SigninModal({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className={loading ? "bg-transparent shadow-none border-none" : ""}
+        className={
+          loading
+            ? "p-0 bg-transparent shadow-none border-none outline-none ring-0"
+            : "sm:max-w-[425px]"
+        }
       >
         {loading ? (
           // ✅ show loader while waiting for server
