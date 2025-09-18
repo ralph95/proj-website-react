@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Send, Mic, User, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+
 const initialMessages = [
   {
     id: "1",
@@ -27,85 +28,95 @@ const initialMessages = [
     timestamp: new Date(Date.now() - 1000 * 60 * 8).toISOString(),
   },
 ];
+
 interface ChatBubbleProps {
   message: string;
   isUser: boolean;
   timestamp: Date;
 }
+
 function ChatBubble({ message, isUser, timestamp }: ChatBubbleProps) {
   const formattedTime = timestamp.toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
     hour12: true,
   });
+
   return (
     <div
       className={cn("flex w-full", isUser ? "justify-end" : "justify-start")}
     >
-      {" "}
       <div
         className={cn(
           "flex max-w-[80%] items-start space-x-2",
           isUser && "flex-row-reverse space-x-reverse"
         )}
       >
-        {" "}
         <div
           className={cn(
             "flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full",
             isUser ? "bg-primary/10" : "bg-muted"
           )}
         >
-          {" "}
           {isUser ? (
             <User className="text-primary h-4 w-4" />
           ) : (
             <Bot className="text-muted-foreground h-4 w-4" />
-          )}{" "}
-        </div>{" "}
+          )}
+        </div>
         <div className="flex flex-col">
-          {" "}
           <div
             className={cn(
               "rounded-2xl px-4 py-2 shadow-sm",
               isUser
-                ? "bg-primary text-primary-foreground rounded-tr-none"
+                ? "bg-primary text-white rounded-tr-none"
                 : "border-border bg-card text-card-foreground rounded-tl-none border"
             )}
           >
-            {" "}
-            <p className="whitespace-pre-wrap">{message}</p>{" "}
-          </div>{" "}
+            <p
+              className={cn(
+                "whitespace-pre-wrap",
+                isUser ? "text-white" : "text-card-foreground"
+              )}
+            >
+              {message}
+            </p>
+          </div>
           <span
             className={cn(
               "text-muted-foreground mt-1 text-xs",
               isUser ? "text-right" : "text-left"
             )}
           >
-            {" "}
-            {formattedTime}{" "}
-          </span>{" "}
-        </div>{" "}
-      </div>{" "}
+            {formattedTime}
+          </span>
+        </div>
+      </div>
     </div>
   );
 }
+
 export default function Conversation1() {
   const [messages, setMessages] = useState(initialMessages);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const chatContainerRef = useRef<HTMLDivElement | null>(null);
+
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
+
     const userMessage = {
       id: Date.now().toString(),
       content: input,
       sender: "user",
       timestamp: new Date().toISOString(),
     };
+
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsTyping(true);
+
     setTimeout(() => {
       const aiMessage = {
         id: (Date.now() + 1).toString(),
@@ -118,22 +129,30 @@ export default function Conversation1() {
       setIsTyping(false);
     }, 1500);
   };
+
+  // 🔥 Auto scroll ONLY the chatbox (not the entire page)
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop =
+        chatContainerRef.current.scrollHeight;
+    }
+  }, [messages, isTyping]);
+
   return (
     <div className="border-border bg-card w-full max-w-md overflow-hidden rounded-xl border shadow-lg">
       {/* Header */}
       <div className="bg-primary p-4">
-        <h1 className="text-primary-foreground text-lg font-semibold">
-          AI Assistant
-        </h1>
-        <p className="text-primary-foreground/80 text-sm">
-          Always here to help you
-        </p>
+        <h1 className="text-white dark:text-white font-semibold">Group Chat</h1>
+        <p className="text-white text-sm">Always here to help you</p>
       </div>
 
-      {/* Chatbox Container with fixed height */}
-      <div className="flex h-[768px] flex-col">
+      {/* Chatbox Container */}
+      <div className="flex h-[756px] flex-col">
         {/* Messages */}
-        <div className="flex-1 space-y-4 overflow-y-auto p-4">
+        <div
+          ref={chatContainerRef}
+          className="flex-1 space-y-4 overflow-y-auto p-4 "
+        >
           {messages.map((message) => (
             <ChatBubble
               key={message.id}
@@ -171,14 +190,14 @@ export default function Conversation1() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Type your message..."
-              className="flex-1"
+              className="flex-1 text-black dark:text-white placeholder:text-muted-foreground dark:placeholder:text-muted-foreground"
             />
             <Button
               type="submit"
               size="icon"
               className="bg-primary hover:bg-primary/90"
             >
-              <Send className="h-4 w-4" />
+              <Send className="h-4 w-4 text-white" />
             </Button>
             <Button type="button" size="icon" variant="outline">
               <Mic className="h-4 w-4" />
