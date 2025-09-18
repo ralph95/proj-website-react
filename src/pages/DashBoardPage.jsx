@@ -118,7 +118,7 @@ export default function AdminDashboard() {
                     onExport={handleExport}
                   />
                   <SystemStatus />
-                  <RecentActivity />
+                  {/* <RecentActivity /> */}
                 </div>
               </div>
             </div>
