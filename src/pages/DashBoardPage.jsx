@@ -11,6 +11,7 @@ import { SystemStatus } from "@/components/ui/system-status";
 import { RecentActivity } from "@/components/ui/recent-activity";
 import { DashboardHeader } from "@/components/ui/dashboard-header";
 import { AdminSidebar } from "@/components/ui/admin-sidebar";
+import ChatBox from "../components/organisms/ChatBox/ChatBox";
 
 // Dashboard stats data
 const stats = [
@@ -95,22 +96,23 @@ export default function AdminDashboard() {
               </div>
 
               {/* Stats Cards */}
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
+              {/* <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
                 {stats.map((stat, index) => (
                   <DashboardCard key={stat.title} stat={stat} index={index} />
                 ))}
-              </div>
+              </div> */}
 
               {/* Main Content Grid */}
-              <div className="grid grid-cols-1 gap-4 sm:gap-6 xl:grid-cols-3">
-                {/* Charts Section */}
-                <div className="space-y-4 sm:space-y-6 xl:col-span-2">
+              <div className="grid grid-cols-1 gap-4 sm:gap-6 xl:grid-cols-3 items-start">
+                <div className="space-y-4 sm:space-y-6 xl:col-span-2 self-start">
                   <RevenueChart />
                   <UsersTable onAddUser={handleAddUser} />
                 </div>
 
-                {/* Sidebar Section */}
-                <div className="space-y-4 sm:space-y-6">
+                <div className="space-y-4 sm:space-y-6 flex flex-col self-start">
+                  <div className="flex">
+                    <ChatBox className="flex-1" />
+                  </div>
                   <QuickActions
                     onAddUser={handleAddUser}
                     onExport={handleExport}
