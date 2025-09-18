@@ -119,7 +119,7 @@ export default function Conversation1() {
     }, 1500);
   };
   return (
-    <div className="border-border bg-card w-full overflow-hidden rounded-xl border shadow-lg">
+    <div className="border-border bg-card w-full max-w-md overflow-hidden rounded-xl border shadow-lg">
       {/* Header */}
       <div className="bg-primary p-4">
         <h1 className="text-primary-foreground text-lg font-semibold">
@@ -130,8 +130,8 @@ export default function Conversation1() {
         </p>
       </div>
 
-      {/* Messages + Input */}
-      <div className="flex flex-col">
+      {/* Chatbox Container with fixed height */}
+      <div className="flex h-[768px] flex-col">
         {/* Messages */}
         <div className="flex-1 space-y-4 overflow-y-auto p-4">
           {messages.map((message) => (
