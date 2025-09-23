@@ -24,7 +24,10 @@ export default function ChatBox({ className }: ChatBoxProps) {
     const token = localStorage.getItem("token");
     if (!token) return;
 
-    const socket = io("http://localhost:5000", { auth: { token } });
+    const socket = io("https://api.philippinesheadline.com", {
+      auth: { token },
+      withCredentials: true, // good if you plan to send cookies
+    });
     socketRef.current = socket;
 
     socket.on("receive_message", (msg: Message) => {
