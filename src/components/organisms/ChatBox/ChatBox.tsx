@@ -28,15 +28,10 @@ export default function ChatBox({ className }: ChatBoxProps) {
       auth: { token },
       withCredentials: true,
     });
-
     socketRef.current = socket;
 
     socket.on("receive_message", (msg: Message) => {
       setMessages((prev) => [...prev, msg]);
-    });
-
-    socket.on("connect_error", (err) => {
-      console.error("Socket connection error:", err.message);
     });
 
     return () => {
@@ -57,9 +52,11 @@ export default function ChatBox({ className }: ChatBoxProps) {
     const user = JSON.parse(localStorage.getItem("user") || "{}");
     const username = user?.name || user?.username || "Anonymous";
 
-    const msg = { user: username, text: input };
-    socketRef.current.emit("send_message", msg);
+    // send only text to server
+    socketRef.current.emit("send_message", input);
 
+    // locally add message
+    const msg = { user: username, text: input };
     setMessages((prev) => [...prev, msg]);
     setInput("");
   };
