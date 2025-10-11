@@ -24,9 +24,11 @@ export default function ChatBox({ className }: ChatBoxProps) {
     const token = localStorage.getItem("token");
     if (!token) return;
 
-    const socket = io("https://api.philippinesheadline.com", {
+    const backendUrl = import.meta.env.VITE_BACK_END || "http://localhost:5000";
+
+    const socket = io(backendUrl, {
       auth: { token },
-      withCredentials: true, // good if you plan to send cookies
+      withCredentials: true,
     });
     socketRef.current = socket;
 
@@ -48,7 +50,14 @@ export default function ChatBox({ className }: ChatBoxProps) {
 
   const sendMessage = () => {
     if (!input.trim() || !socketRef.current) return;
-    socketRef.current.emit("send_message", input);
+
+    const user = JSON.parse(localStorage.getItem("user") || "{}");
+    const username = user?.name || user?.username || "Anonymous";
+
+    const msg = { user: username, text: input };
+    socketRef.current.emit("send_message", msg);
+
+    setMessages((prev) => [...prev, msg]);
     setInput("");
   };
 
