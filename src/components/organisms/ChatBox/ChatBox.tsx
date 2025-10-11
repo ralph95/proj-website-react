@@ -29,8 +29,14 @@ export default function ChatBox({ className }: ChatBoxProps) {
       withCredentials: true,
     });
 
+    socketRef.current = socket;
+
     socket.on("receive_message", (msg: Message) => {
       setMessages((prev) => [...prev, msg]);
+    });
+
+    socket.on("connect_error", (err) => {
+      console.error("Socket connection error:", err.message);
     });
 
     return () => {
