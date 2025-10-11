@@ -13,6 +13,9 @@ RUN npm install
 # Copy the rest of the project
 COPY . .
 
+# Copy environment file so Vite can access variables during build
+COPY .env.production .env
+
 # Build the Vite app (outputs to /app/dist)
 RUN npm run build
 

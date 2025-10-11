@@ -8,7 +8,7 @@ export async function APIEXECUTE(path: string, options: RequestInit = {}) {
     ...options.headers,
   };
 
-  const baseUrl = import.meta.env.VITE_BACK_END || import.meta.env.VITE_API_URL;
+  const baseUrl = import.meta.env.VITE_BACK_END;
 
   const res = await fetch(`${baseUrl}${path}`, {
     ...options,

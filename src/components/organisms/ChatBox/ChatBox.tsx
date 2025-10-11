@@ -24,13 +24,10 @@ export default function ChatBox({ className }: ChatBoxProps) {
     const token = localStorage.getItem("token");
     if (!token) return;
 
-    const backendUrl = import.meta.env.VITE_BACK_END || "http://localhost:5000";
-
-    const socket = io(backendUrl, {
+    const socket = io(import.meta.env.VITE_BACK_END, {
       auth: { token },
       withCredentials: true,
     });
-    socketRef.current = socket;
 
     socket.on("receive_message", (msg: Message) => {
       setMessages((prev) => [...prev, msg]);
