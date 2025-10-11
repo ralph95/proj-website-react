@@ -52,11 +52,9 @@ export default function ChatBox({ className }: ChatBoxProps) {
     const user = JSON.parse(localStorage.getItem("user") || "{}");
     const username = user?.name || user?.username || "Anonymous";
 
-    // send only text to server
-    socketRef.current.emit("send_message", input);
-
-    // locally add message
     const msg = { user: username, text: input };
+    socketRef.current.emit("send_message", msg);
+
     setMessages((prev) => [...prev, msg]);
     setInput("");
   };
