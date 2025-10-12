@@ -30,7 +30,8 @@ export default function ChatBox({ className }: ChatBoxProps) {
     });
     socketRef.current = socket;
 
-    socket.on("receive_message", (msg: Message) => {
+    // 👇 Listen for the event the backend emits
+    socket.on("receive_message", (msg) => {
       setMessages((prev) => [...prev, msg]);
     });
 
