@@ -55,8 +55,6 @@ export default function ChatBox({ className }: ChatBoxProps) {
 
     const msg = { user: username, text: input };
     socketRef.current.emit("send_message", msg);
-
-    setMessages((prev) => [...prev, msg]);
     setInput("");
   };
 
