@@ -44,7 +44,7 @@ export default function SigninModal({
       console.log("Login success:", data);
 
       if (data.token) {
-        localStorage.setItem("tokens", data.token);
+        localStorage.setItem("token", data.token);
         localStorage.setItem("user", JSON.stringify(data.user));
         navigate("/main");
       }
