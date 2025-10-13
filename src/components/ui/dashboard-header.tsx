@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { memo } from 'react';
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { SidebarTrigger } from '@/components/ui/sidebar';
-import { Separator } from '@/components/ui/separator';
+import { memo } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { SidebarTrigger } from "@/components/ui/sidebar";
+import { Separator } from "@/components/ui/separator";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+} from "@/components/ui/dropdown-menu";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -19,7 +19,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb';
+} from "@/components/ui/breadcrumb";
 import {
   Bell,
   Search,
@@ -27,7 +27,7 @@ import {
   Download,
   RefreshCw,
   MoreHorizontal,
-} from 'lucide-react';
+} from "lucide-react";
 
 interface DashboardHeaderProps {
   searchQuery: string;
@@ -78,7 +78,7 @@ export const DashboardHeader = memo(
 
             {/* Desktop Actions */}
             <div className="hidden items-center gap-2 md:flex">
-              <Button variant="outline" size="sm">
+              {/* <Button variant="outline" size="sm">
                 <Filter className="mr-2 h-4 w-4" />
                 Filter
               </Button>
@@ -95,10 +95,12 @@ export const DashboardHeader = memo(
                 disabled={isRefreshing}
               >
                 <RefreshCw
-                  className={`mr-2 h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`}
+                  className={`mr-2 h-4 w-4 ${
+                    isRefreshing ? "animate-spin" : ""
+                  }`}
                 />
                 Refresh
-              </Button>
+              </Button> */}
             </div>
 
             {/* Mobile Menu */}
@@ -109,7 +111,7 @@ export const DashboardHeader = memo(
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-48">
-                <DropdownMenuItem onClick={() => onSearchChange('')}>
+                <DropdownMenuItem onClick={() => onSearchChange("")}>
                   <Search className="mr-2 h-4 w-4" />
                   Search
                 </DropdownMenuItem>
@@ -131,11 +133,21 @@ export const DashboardHeader = memo(
             <Button variant="outline" size="sm">
               <Bell className="h-4 w-4" />
             </Button>
+            <button
+              onClick={() => window.open("", "_blank")}
+              className="ml-2 p-0 border border-gray-300 rounded-full overflow-hidden hover:ring-2 hover:ring-blue-500 transition-all"
+            >
+              <img
+                src="https://avatars.githubusercontent.com/u/50393157?v=4"
+                alt="Profile"
+                className="w-8 h-8 rounded-full"
+              />
+            </button>
           </motion.div>
         </div>
       </header>
     );
-  },
+  }
 );
 
-DashboardHeader.displayName = 'DashboardHeader';
+DashboardHeader.displayName = "DashboardHeader";
