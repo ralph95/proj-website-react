@@ -1,3 +1,4 @@
+// src/App.jsx
 import React from "react";
 import "./styles/tailwind.css";
 import { ThemeProvider } from "styled-components";
@@ -16,9 +17,11 @@ import {
 import HomePage from "./pages/HomePage";
 import DashBoardPage from "./pages/DashBoardPage";
 import CheckMailVerification from "./pages/CheckMailVerification";
-import ProtectedRoute from "./components/routes/ProtectedRoute"; // ✅ import here
+import ProtectedRoute from "./components/routes/ProtectedRoute";
 
 function App() {
+  const token = localStorage.getItem("token");
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
@@ -37,8 +40,13 @@ function App() {
         <div className="relative z-10">
           <Router>
             <Routes>
+              {/* ✅ Redirect logged-in users straight to /main */}
+              <Route
+                path="/"
+                element={token ? <Navigate to="/main" replace /> : <HomePage />}
+              />
+
               {/* Public routes */}
-              <Route path="/" element={<HomePage />} />
               <Route path="/check-email" element={<CheckMailVerification />} />
 
               {/* Protected routes */}
