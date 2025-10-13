@@ -48,7 +48,12 @@ export default function ChatBox({ className }: ChatBoxProps) {
 
   const sendMessage = () => {
     if (!input.trim() || !socketRef.current) return;
-    socketRef.current.emit("send_message", input);
+    const user = JSON.parse(localStorage.getItem("user") || "{}");
+    const username = user?.name || user?.username || "Anonymous";
+
+    const msg = { user: username, text: input };
+
+    socketRef.current.emit("send_message", msg);
     setInput("");
   };
 
