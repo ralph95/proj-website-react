@@ -13,7 +13,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import ReactLogo from "@/assets/images/react-logo.png";
 import { APIEXECUTE } from "@/lib/api";
 import { useNavigate } from "react-router-dom";
-import ClassicLoader from "@/components/atoms/Loader/Loader"; // ✅ import loader
+import ClassicLoader from "@/components/atoms/Loader/Loader";
+import Turnstile from "react-turnstile";
 
 export default function SigninModal({
   open,
@@ -29,11 +30,17 @@ export default function SigninModal({
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError("");
+
+    if (!turnstileToken) {
+      alert("Please verify you're not a bot first!");
+      return;
+    }
 
     try {
       const data = await APIEXECUTE("/login", {
@@ -136,6 +143,12 @@ export default function SigninModal({
                 <a className="text-sm underline hover:no-underline" href="#">
                   Forgot password?
                 </a>
+              </div>
+              <div className="flex justify-center mb-3">
+                <Turnstile
+                  sitekey="0x4AAAAAAB6_pu3nNfZo_bwH"
+                  onVerify={(token) => setTurnstileToken(token)}
+                />
               </div>
 
               <Button type="submit" className="w-full text-white">
