@@ -14,6 +14,7 @@ import { APIEXECUTE } from "@/lib/api";
 import { useNavigate } from "react-router-dom";
 import ClassicLoader from "@/components/atoms/Loader/Loader";
 import { cn } from "@/lib/utils"; // optional helper if you have shadcn utils
+import Turnstile from "react-turnstile";
 
 // ✅ password strength checker
 function checkPasswordStrength(password: string) {
@@ -60,11 +61,17 @@ export default function SignUpModal({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
     setPasswordError("");
+
+    if (!turnstileToken) {
+      alert("Please verify you're not a bot first!");
+      return;
+    }
 
     const { isValid, message } = checkPasswordStrength(password);
     if (!isValid) {
@@ -190,10 +197,27 @@ export default function SignUpModal({
                   />
                 </div>
               </div>
+              <div className="flex justify-center mb-3">
+                <Turnstile
+                  sitekey="0x4AAAAAAB6_pu3nNfZo_bwH"
+                  onVerify={(token) => setTurnstileToken(token)}
+                />
+              </div>
               <Button type="submit" className="w-full text-white">
                 Sign up
               </Button>
             </form>
+            <div className="before:bg-border after:bg-border flex items-center gap-3 before:h-px before:flex-1 after:h-px after:flex-1">
+              <span className="text-muted-foreground text-xs">Or</span>
+            </div>
+            <Button variant="outline" className="flex items-center space-x-2">
+              <img
+                src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+                alt="Google logo"
+                className="h-5 w-5"
+              />
+              <span>Sign up with Google</span>
+            </Button>
           </>
         )}
       </DialogContent>
