@@ -46,7 +46,7 @@ export default function SigninModal({
     try {
       const data = await APIEXECUTE("/login", {
         method: "POST",
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, password, rememberMe }),
       });
 
       console.log("Login success:", data);
