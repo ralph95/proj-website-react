@@ -31,6 +31,7 @@ export default function SigninModal({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [turnstileToken, setTurnstileToken] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -132,7 +133,13 @@ export default function SigninModal({
 
               <div className="flex justify-between gap-2">
                 <div className="flex items-center gap-2">
-                  <Checkbox id={`${id}-remember`} />
+                  <Checkbox
+                    id={`${id}-remember`}
+                    checked={rememberMe}
+                    onCheckedChange={(checked) =>
+                      setRememberMe(checked === true)
+                    }
+                  />
                   <Label
                     htmlFor={`${id}-remember`}
                     className="text-muted-foreground font-normal"
