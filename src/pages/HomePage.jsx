@@ -23,6 +23,7 @@ import github from "../assets/images/github.png";
 import profileImage from "../assets/images/profileImage.png";
 import HoneyComb from "../components/atoms/HoneyComb/HoneyComb";
 import CardStack from "../components/atoms/CardStack/CardStack";
+import ImageStack from "../components/atoms/ImageStack/ImageStack";
 
 const StyledPolygon = styled.div`
   height: 0rem;
@@ -336,6 +337,18 @@ const HomePage = () => {
         <div className="flex justify-center items-center">
           <HoneyComb />
         </div>
+      </Container>
+      <StyledPolygon />
+      <Spacer height="2rem" style={{ backgroundColor: "#0d0d0d" }} />
+      <StyledInvesedPolygon />
+      <Container>
+        <Spacer />
+        <Spacer />
+        <Spacer />
+        <h1 className="text-5xl mt-4 mb-4 font-bold">
+          Images powered by Amazon S3
+        </h1>
+        <ImageStack />
       </Container>
       <StyledPolygon />
       <Spacer height="2rem" style={{ backgroundColor: "#0d0d0d" }} />
