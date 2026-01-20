@@ -182,7 +182,7 @@ const HomePage = () => {
               <div className="block md:hidden">
                 <Spacer />
               </div>
-              <h1 className="text-4xl font-bold">Hi, I'm Ralph</h1>
+              <h1 className="text-4xl font-bold">Hi, I'm Ralph Baylon</h1>
               <h1 className="text-5xl mt-4 mb-4 font-bold">
                 {isDevOps ? "I'm a DevOps Engineer." : "I'm a Web Developer."}
               </h1>
