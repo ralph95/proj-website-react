@@ -5,6 +5,7 @@ import Section from "../components/atoms/Section/Section";
 import Spacer from "../components/atoms/Spacer/Spacer";
 import Row from "../components/atoms/Row/Row";
 import Column from "../components/atoms/Column/Column";
+import DecryptedText from "@/components/atoms/DecryptedText/DecryptedText";
 import reactLogo from "../assets/images/react-logo.png";
 import typeScript from "../assets/images/typescript.png";
 import htmlLogo from "../assets/images/html.webp";
@@ -346,8 +347,17 @@ const HomePage = () => {
         <Spacer />
         <Spacer />
         <h1 className="text-5xl mt-4 mb-4 font-bold">
-          Images powered by Amazon S3
+          <DecryptedText
+            text="Images powered by Amazon S3"
+            animateOn="view"
+            revealDirection="start"
+            sequential
+            useOriginalCharsOnly={false}
+            className="text-5xl font-bold"
+            encryptedClassName="text-primary"
+          />
         </h1>
+
         <ImageStack />
       </Container>
       <StyledPolygon />
