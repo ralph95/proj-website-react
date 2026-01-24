@@ -31,16 +31,16 @@ function checkPasswordStrength(password: string) {
     message: !password
       ? ""
       : !minLength
-      ? "Password must be at least 8 characters long"
-      : !hasUpper
-      ? "Password must include an uppercase letter"
-      : !hasLower
-      ? "Password must include a lowercase letter"
-      : !hasNumber
-      ? "Password must include a number"
-      : !hasSpecial
-      ? "Password must include a special character"
-      : "",
+        ? "Password must be at least 8 characters long"
+        : !hasUpper
+          ? "Password must include an uppercase letter"
+          : !hasLower
+            ? "Password must include a lowercase letter"
+            : !hasNumber
+              ? "Password must include a number"
+              : !hasSpecial
+                ? "Password must include a special character"
+                : "",
   };
 }
 
@@ -62,6 +62,8 @@ export default function SignUpModal({
   const [error, setError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [turnstileToken, setTurnstileToken] = useState("");
+
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -214,8 +216,7 @@ export default function SignUpModal({
               variant="outline"
               className="flex items-center space-x-2"
               onClick={() => {
-                window.location.href =
-                  "https://home.philippinesheadline.com/auth/google";
+                window.location.href = `${API_URL}/auth/google`;
               }}
             >
               <img
