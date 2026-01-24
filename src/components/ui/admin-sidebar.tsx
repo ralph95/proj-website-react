@@ -1,5 +1,5 @@
 import { memo, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Sidebar,
   SidebarContent,
@@ -44,7 +44,7 @@ const menuItems = [
 
 export const AdminSidebar = memo(() => {
   const [theme, setTheme] = useState<"light" | "dark">(
-    (localStorage.getItem("theme") as "light" | "dark") || "light"
+    (localStorage.getItem("theme") as "light" | "dark") || "light",
   );
 
   useEffect(() => {
@@ -52,6 +52,17 @@ export const AdminSidebar = memo(() => {
     document.documentElement.classList.add(theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // 1. Remove token from storage
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+
+    // 2. Redirect to login page
+    navigate("/");
+  };
 
   return (
     <Sidebar collapsible="icon">
@@ -108,10 +119,13 @@ export const AdminSidebar = memo(() => {
           </SidebarMenuItem>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <Link to="/profile">
+              <button
+                onClick={handleLogout}
+                className="flex items-center gap-2"
+              >
                 <User />
-                <span>Admin Profile</span>
-              </Link>
+                <span>Log Out</span>
+              </button>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
