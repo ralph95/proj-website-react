@@ -170,7 +170,8 @@ export default function SigninModal({
               variant="outline"
               className="flex items-center space-x-2"
               onClick={() => {
-                window.location.href = `${import.meta.env.VITE_API_URL}/auth/google`;
+                window.location.href =
+                  "https://api.philippinesheadline.com/auth/google";
               }}
             >
               <img
