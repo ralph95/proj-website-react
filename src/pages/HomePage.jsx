@@ -333,10 +333,10 @@ const HomePage = () => {
       </motion.div>
       <Container noPadding twoColumn4060>
         <div className="flex flex-col justify-center">
-          {/* <CardStack></CardStack> */}
+          <CardStack></CardStack>
         </div>
         <div className="flex justify-center items-center">
-          {/* <HoneyComb /> */}
+          <HoneyComb />
         </div>
       </Container>
       <StyledPolygon />
@@ -358,7 +358,7 @@ const HomePage = () => {
           />
         </h1>
 
-        <ImageStack />
+        {/* <ImageStack /> */}
       </Container>
       <StyledPolygon />
       <Spacer height="2rem" style={{ backgroundColor: "#0d0d0d" }} />
