@@ -158,13 +158,7 @@ export default function SigninModal({
                 />
               </div>
 
-              <Button
-                type="submit"
-                className="w-full text-white"
-                onClick={() => {
-                  window.location.href = `${import.meta.env.VITE_API_URL}/auth/google`;
-                }}
-              >
+              <Button type="submit" className="w-full text-white">
                 Sign in
               </Button>
             </form>
@@ -172,7 +166,13 @@ export default function SigninModal({
             <div className="before:bg-border after:bg-border flex items-center gap-3 before:h-px before:flex-1 after:h-px after:flex-1">
               <span className="text-muted-foreground text-xs">Or</span>
             </div>
-            <Button variant="outline" className="flex items-center space-x-2">
+            <Button
+              variant="outline"
+              className="flex items-center space-x-2"
+              onClick={() => {
+                window.location.href = `${import.meta.env.VITE_API_URL}/auth/google`;
+              }}
+            >
               <img
                 src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
                 alt="Google logo"
