@@ -216,7 +216,7 @@ export default function SignUpModal({
               variant="outline"
               className="flex items-center space-x-2"
               onClick={() => {
-                window.location.href = `${API_URL}/auth/google/callback`;
+                window.location.href = `${API_URL}/auth/google`;
               }}
             >
               <img
