@@ -16,7 +16,8 @@ COPY . .
 # Build the Vite app (outputs to /app/dist)
 RUN npm run build
 
-# Set environment variables
+# Set the environment variable so Vite can use it during build
+ENV VITE_API_URL=$VITE_API_URL
 ENV PORT=3000
 
 # Expose port 3000
