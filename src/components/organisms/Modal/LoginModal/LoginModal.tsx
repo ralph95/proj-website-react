@@ -158,7 +158,13 @@ export default function SigninModal({
                 />
               </div>
 
-              <Button type="submit" className="w-full text-white">
+              <Button
+                type="submit"
+                className="w-full text-white"
+                onClick={() => {
+                  window.location.href = `${import.meta.env.VITE_API_URL}/auth/google`;
+                }}
+              >
                 Sign in
               </Button>
             </form>
