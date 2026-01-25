@@ -358,7 +358,7 @@ const HomePage = () => {
           />
         </h1>
 
-        {/* <ImageStack /> */}
+        <ImageStack />
       </Container>
       <StyledPolygon />
       <Spacer height="2rem" style={{ backgroundColor: "#0d0d0d" }} />
