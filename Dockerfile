@@ -4,6 +4,12 @@ FROM node:20-slim
 # Set working directory
 WORKDIR /app
 
+# Accept API URL as a build argument
+ARG VITE_API_URL
+
+# Set environment variable for Vite to use at build time
+ENV VITE_API_URL=$VITE_API_URL
+
 # Copy only package files first for caching
 COPY package*.json ./
 
@@ -16,8 +22,7 @@ COPY . .
 # Build the Vite app (outputs to /app/dist)
 RUN npm run build
 
-# Set the environment variable so Vite can use it during build
-ENV VITE_API_URL=$VITE_API_URL
+# Set environment variables
 ENV PORT=3000
 
 # Expose port 3000
