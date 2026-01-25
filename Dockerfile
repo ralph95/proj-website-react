@@ -20,9 +20,10 @@ RUN npm install
 COPY . .
 
 # Build the Vite app (outputs to /app/dist)
+# VITE_API_URL will be replaced in the JS bundle here
 RUN npm run build
 
-# Set environment variables
+# Set runtime environment variable (optional for Node, not React)
 ENV PORT=3000
 
 # Expose port 3000
