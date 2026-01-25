@@ -10,6 +10,11 @@ export default function OAuthSuccess() {
 
     if (token) {
       localStorage.setItem("token", token);
+
+      // Decode JWT to get user
+      const payload = JSON.parse(atob(token.split(".")[1]));
+      localStorage.setItem("user", JSON.stringify(payload));
+
       navigate("/main", { replace: true });
     } else {
       navigate("/", { replace: true });
