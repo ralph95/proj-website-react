@@ -25,6 +25,47 @@ import profileImage from "../assets/images/profileImage.png";
 import HoneyComb from "../components/atoms/HoneyComb/HoneyComb";
 import CardStack from "../components/atoms/CardStack/CardStack";
 import ImageStack from "../components/atoms/ImageStack/ImageStack";
+import LogoLoop from "./../components/LogoLoop";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+} from "react-icons/si";
+
+const techLogos = [
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+  {
+    node: <SiTypescript />,
+    title: "TypeScript",
+    href: "https://www.typescriptlang.org",
+  },
+  {
+    node: <SiTailwindcss />,
+    title: "Tailwind CSS",
+    href: "https://tailwindcss.com",
+  },
+];
+
+// Alternative with image sources
+const imageLogos = [
+  {
+    src: "/logos/company1.png",
+    alt: "Company 1",
+    href: "https://company1.com",
+  },
+  {
+    src: "/logos/company2.png",
+    alt: "Company 2",
+    href: "https://company2.com",
+  },
+  {
+    src: "/logos/company3.png",
+    alt: "Company 3",
+    href: "https://company3.com",
+  },
+];
 
 const StyledPolygon = styled.div`
   height: 0rem;
@@ -329,7 +370,7 @@ const HomePage = () => {
       >
         <StyledPolygon />
         <Spacer height="2.75rem" style={{ backgroundColor: "#0d0d0d" }} />
-        <StyledInvesedPolygon />
+        {/* <StyledInvesedPolygon /> */}
       </motion.div>
       {/* <Container noPadding twoColumn4060>
         <div className="flex flex-col justify-center">
@@ -338,10 +379,48 @@ const HomePage = () => {
         <div className="flex justify-center items-center">
           <HoneyComb />
         </div>
-      </Container>
-      <StyledPolygon />
-      <Spacer height="2rem" style={{ backgroundColor: "#0d0d0d" }} />
-      <StyledInvesedPolygon /> */}
+      </Container> */}
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          type: "spring",
+          stiffness: 100,
+          damping: 25,
+          delay: 0.3,
+          duration: 1.2,
+        }}
+        style={{
+          height: "200px",
+          display: "flex",
+          alignItems: "center", // vertical centering
+          overflow: "hidden",
+          position: "relative",
+        }}
+      >
+        {/* Basic horizontal loop */}
+        <LogoLoop
+          logos={techLogos}
+          speed={100}
+          direction="left"
+          logoHeight={60}
+          gap={60}
+          hoverSpeed={0}
+          scaleOnHover
+          fadeOut
+          fadeOutColor="#ffffff"
+          ariaLabel="Technology partners"
+        />
+      </motion.div>
+      {/* Spacer and Polygon container */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "spring", stiffness: 100, damping: 25, delay: 0.6 }}
+      >
+        <Spacer height="2rem" style={{ backgroundColor: "#0d0d0d" }} />
+        <StyledInvesedPolygon />
+      </motion.div>
       <Container>
         <Spacer />
         <Spacer />
