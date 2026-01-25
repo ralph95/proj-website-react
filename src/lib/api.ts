@@ -4,7 +4,7 @@ export async function APIEXECUTE(path: string, options: any = {}) {
   const token = localStorage.getItem("token");
 
   const res = await axios({
-    url: `${import.meta.env.VITE_API_URL}${path}`,
+    url: `https://api.philippinesheadline.com${path}`,
     method: options.method || "GET",
     data: options.body ? JSON.parse(options.body) : undefined,
     headers: {
