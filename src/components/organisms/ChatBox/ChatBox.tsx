@@ -24,7 +24,7 @@ export default function ChatBox({ className }: ChatBoxProps) {
     const token = localStorage.getItem("token");
     if (!token) return;
 
-    const socket = io(import.meta.env.VITE_API_URL, {
+    const socket = io("https://api.philippinesheadline.com", {
       auth: { token },
       withCredentials: true, // good if you plan to send cookies
     });
