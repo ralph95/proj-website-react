@@ -11,7 +11,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 export const fetchImages = async (): Promise<ImageItem[]> => {
   try {
-    const res = await axios.get(`${API_URL}/images`);
+    const res = await axios.get("https://api.philippinesheadline.com/images");
     return res.data;
   } catch (err) {
     console.error("Failed to fetch images:", err);
