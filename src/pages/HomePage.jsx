@@ -331,7 +331,7 @@ const HomePage = () => {
         <Spacer height="2.75rem" style={{ backgroundColor: "#0d0d0d" }} />
         <StyledInvesedPolygon />
       </motion.div>
-      <Container noPadding twoColumn4060>
+      {/* <Container noPadding twoColumn4060>
         <div className="flex flex-col justify-center">
           <CardStack></CardStack>
         </div>
@@ -341,7 +341,7 @@ const HomePage = () => {
       </Container>
       <StyledPolygon />
       <Spacer height="2rem" style={{ backgroundColor: "#0d0d0d" }} />
-      <StyledInvesedPolygon />
+      <StyledInvesedPolygon /> */}
       <Container>
         <Spacer />
         <Spacer />
