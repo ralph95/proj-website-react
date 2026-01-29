@@ -369,7 +369,7 @@ const HomePage = () => {
         }}
       >
         <StyledPolygon />
-        <Spacer height="2.75rem" style={{ backgroundColor: "#0d0d0d" }} />
+        <Spacer height="1.5rem" style={{ backgroundColor: "#0d0d0d" }} />
         {/* <StyledInvesedPolygon /> */}
       </motion.div>
       {/* <Container noPadding twoColumn4060>
@@ -391,7 +391,7 @@ const HomePage = () => {
           duration: 1.2,
         }}
         style={{
-          height: "200px",
+          height: "100px",
           display: "flex",
           alignItems: "center", // vertical centering
           overflow: "hidden",
@@ -403,7 +403,7 @@ const HomePage = () => {
           logos={techLogos}
           speed={100}
           direction="left"
-          logoHeight={60}
+          logoHeight={37}
           gap={60}
           hoverSpeed={0}
           scaleOnHover
@@ -418,7 +418,7 @@ const HomePage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 100, damping: 25, delay: 0.6 }}
       >
-        <Spacer height="2rem" style={{ backgroundColor: "#0d0d0d" }} />
+        <Spacer height="1.5rem" style={{ backgroundColor: "#0d0d0d" }} />
         <StyledInvesedPolygon />
       </motion.div>
       <Container>
