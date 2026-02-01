@@ -31,7 +31,16 @@ import {
   SiNextdotjs,
   SiTypescript,
   SiTailwindcss,
+  SiPython,
+  SiNodedotjs,
+  SiJavascript,
+  SiHtml5,
+  SiCss3,
 } from "react-icons/si";
+import {
+  ThreeDScrollTriggerContainer,
+  ThreeDScrollTriggerRow,
+} from "@/components/lightswind/3d-scroll-trigger";
 
 const techLogos = [
   { node: <SiReact />, title: "React", href: "https://react.dev" },
@@ -45,6 +54,23 @@ const techLogos = [
     node: <SiTailwindcss />,
     title: "Tailwind CSS",
     href: "https://tailwindcss.com",
+  },
+  { node: <SiPython />, title: "Python", href: "https://www.python.org" },
+  { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org" },
+  {
+    node: <SiJavascript />,
+    title: "JavaScript",
+    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  },
+  {
+    node: <SiHtml5 />,
+    title: "HTML5",
+    href: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  },
+  {
+    node: <SiCss3 />,
+    title: "CSS3",
+    href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
   },
 ];
 
@@ -440,7 +466,87 @@ const HomePage = () => {
         <ImageStack />
       </Container>
       <StyledPolygon />
-      <Spacer height="2rem" style={{ backgroundColor: "#0d0d0d" }} />
+      <Spacer height="1.5rem" style={{ backgroundColor: "#0d0d0d" }} />
+
+      <ThreeDScrollTriggerContainer>
+        <div className="w-full flex justify-center items-center min-h-[210px]">
+          <ThreeDScrollTriggerRow baseVelocity={5} direction={1}>
+            <div className="px-4 py-2  text-white rounded-lg">
+              <div className="mx-4 mt-2 inline-flex w-72 flex-col items-start rounded-2xl bg-gray-100 p-4 border dark:bg-neutral-900">
+                <div className="flex items-center gap-3">
+                  <img
+                    src="https://i.pravatar.cc/150?img=11"
+                    alt="Gemnes Joy Altamirano"
+                    className="h-12 w-12 rounded-full object-cover"
+                  />
+                  <div>
+                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white">
+                      Gemnes Joy Altamirano
+                    </h4>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      Social Media Manager
+                    </p>
+                  </div>
+                </div>
+                <p className="mt-3 text-sm text-foreground text-wrap">
+                  The attention to detail is phenomenal. The animations,
+                  spacing, and component harmony make every project feel
+                  premium.
+                </p>
+              </div>
+            </div>
+            <div className="px-4 py-2 text-white rounded-lg">
+              <div className="mx-4 mt-2 inline-flex w-72 flex-col items-start rounded-2xl bg-gray-100 p-4 border dark:bg-neutral-900">
+                <div className="flex items-center gap-3">
+                  <img
+                    src="https://i.pravatar.cc/150?img=25"
+                    alt="Aria Thompson"
+                    className="h-12 w-12 rounded-full object-cover"
+                  />
+                  <div>
+                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white">
+                      Aria Thompson
+                    </h4>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      CreativePixel Studio
+                    </p>
+                  </div>
+                </div>
+                <p className="mt-3 text-sm text-foreground text-wrap">
+                  Lightswind UI has completely changed how we design modern
+                  interfaces. Every component feels elegant, responsive, and
+                  intuitive.
+                </p>
+              </div>
+            </div>
+            <div className="px-4 py-2 text-white rounded-lg">
+              <div className="mx-4 mt-2 inline-flex w-72 flex-col items-start rounded-2xl bg-gray-100 p-4 border dark:bg-neutral-900">
+                <div className="flex items-center gap-3">
+                  <img
+                    src="https://i.pravatar.cc/150?img=36"
+                    alt="Maya Chen"
+                    className="h-12 w-12 rounded-full object-cover"
+                  />
+                  <div>
+                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white">
+                      Maya Chen
+                    </h4>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      Visionary Labs
+                    </p>
+                  </div>
+                </div>
+                <p className="mt-3 text-sm text-foreground text-wrap">
+                  I’ve used many design systems, but Lightswind UI strikes the
+                  perfect balance between flexibility and aesthetics. It’s a
+                  developer’s dream!
+                </p>
+              </div>
+            </div>
+          </ThreeDScrollTriggerRow>
+        </div>
+      </ThreeDScrollTriggerContainer>
+      <Spacer height="1.5rem" style={{ backgroundColor: "#0d0d0d" }} />
       <StyledInvesedPolygon />
       <Container
         centerVertically

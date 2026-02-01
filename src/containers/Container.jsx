@@ -8,6 +8,7 @@ const Container = ({
   noPadding = false,
   noMargin = false,
   noPaddingBottom = false,
+  minHeight = 500,
 }) => {
   let layoutClasses = "";
 
@@ -28,7 +29,7 @@ const Container = ({
         ${!noPadding ? (noPaddingBottom ? "px-5 pt-10" : "px-5 py-10") : ""}
         ${layoutClasses}
       `}
-      style={{ minHeight: "500px", height: height || "auto" }}
+      style={{ minHeight: `${minHeight}px`, height: height || "auto" }}
     >
       {children}
     </div>
