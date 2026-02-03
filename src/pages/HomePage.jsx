@@ -489,9 +489,9 @@ const HomePage = () => {
                   </div>
                 </div>
                 <p className="mt-3 text-sm text-foreground text-wrap">
-                  The attention to detail is phenomenal. The animations,
-                  spacing, and component harmony make every project feel
-                  premium.
+                  I've worked with Ralph on different Website and landing page
+                  projects, he definitely made life easier for us with his tech
+                  skills and great work process!
                 </p>
               </div>
             </div>
@@ -505,10 +505,10 @@ const HomePage = () => {
                   />
                   <div>
                     <h4 className="text-sm font-semibold text-gray-900 dark:text-white">
-                      Aria Thompson
+                      Grace Wang
                     </h4>
                     <p className="text-xs text-gray-500 dark:text-gray-400">
-                      CreativePixel Studio
+                      Christian Joy and Health
                     </p>
                   </div>
                 </div>
@@ -519,7 +519,7 @@ const HomePage = () => {
                 </p>
               </div>
             </div>
-            <div className="px-4 py-2 text-white rounded-lg">
+            {/* <div className="px-4 py-2 text-white rounded-lg">
               <div className="mx-4 mt-2 inline-flex w-72 flex-col items-start rounded-2xl bg-gray-100 p-4 border dark:bg-neutral-900">
                 <div className="flex items-center gap-3">
                   <img
@@ -542,7 +542,7 @@ const HomePage = () => {
                   developer’s dream!
                 </p>
               </div>
-            </div>
+            </div> */}
           </ThreeDScrollTriggerRow>
         </div>
       </ThreeDScrollTriggerContainer>
