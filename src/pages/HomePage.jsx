@@ -16,16 +16,6 @@ import polygon from "../assets/svg/polygon.svg";
 import heroRaf from "../assets/images/hero_raf.webp";
 import Container from "../containers/Container";
 import { motion } from "framer-motion";
-
-import docker from "../assets/images/docker.png";
-import jenkins from "../assets/images/jenkins.png";
-import amazon from "../assets/images/amazon.png";
-import github from "../assets/images/github.png";
-import profileImage from "../assets/images/profileImage.png";
-import HoneyComb from "../components/atoms/HoneyComb/HoneyComb";
-import CardStack from "../components/atoms/CardStack/CardStack";
-import ImageStack from "../components/atoms/ImageStack/ImageStack";
-import LogoLoop from "./../components/LogoLoop";
 import {
   SiReact,
   SiNextdotjs,
@@ -41,6 +31,19 @@ import {
   ThreeDScrollTriggerContainer,
   ThreeDScrollTriggerRow,
 } from "@/components/lightswind/3d-scroll-trigger";
+import LogoLoop from "./../components/LogoLoop";
+
+// Imported Images
+import docker from "../assets/images/docker.png";
+import jenkins from "../assets/images/jenkins.png";
+import amazon from "../assets/images/amazon.png";
+import github from "../assets/images/github.png";
+import profileImage from "../assets/images/profileImage.png";
+import HoneyComb from "../components/atoms/HoneyComb/HoneyComb";
+import CardStack from "../components/atoms/CardStack/CardStack";
+import ImageStack from "../components/atoms/ImageStack/ImageStack";
+import gemTestimonial from "../assets/images/gem_testimonial.jpg";
+import graceTestimonial from "../assets/images/graceProf.webp";
 
 const techLogos = [
   { node: <SiReact />, title: "React", href: "https://react.dev" },
@@ -475,7 +478,7 @@ const HomePage = () => {
               <div className="mx-4 mt-2 inline-flex w-72 flex-col items-start rounded-2xl bg-gray-100 p-4 border dark:bg-neutral-900">
                 <div className="flex items-center gap-3">
                   <img
-                    src="https://i.pravatar.cc/150?img=11"
+                    src={gemTestimonial}
                     alt="Gemnes Joy Altamirano"
                     className="h-12 w-12 rounded-full object-cover"
                   />
@@ -499,7 +502,7 @@ const HomePage = () => {
               <div className="mx-4 mt-2 inline-flex w-72 flex-col items-start rounded-2xl bg-gray-100 p-4 border dark:bg-neutral-900">
                 <div className="flex items-center gap-3">
                   <img
-                    src="https://i.pravatar.cc/150?img=25"
+                    src={graceTestimonial}
                     alt="Aria Thompson"
                     className="h-12 w-12 rounded-full object-cover"
                   />
