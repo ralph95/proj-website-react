@@ -105,8 +105,8 @@ const Menu = () => {
       <MenuButton onClick={() => setIsOpen(!isOpen)}>Menu ☰</MenuButton>
       <MenuWrapper $isOpen={isOpen}>
         <a href="#services">Resume</a>
-        <a href="/faqs">Persona</a>
         <a href="https://github.com/ralph95">Github</a>
+        <a href="/faqs">Persona</a>
 
         <MobileOnly>
           <a
