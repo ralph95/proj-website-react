@@ -19,6 +19,7 @@ import DashBoardPage from "./pages/DashBoardPage";
 import CheckMailVerification from "./pages/CheckMailVerification";
 import ProtectedRoute from "./components/routes/ProtectedRoute";
 import OAuthSuccess from "./pages/OAuthSuccess.jsx";
+import FaqsPage from "./pages/FaqsPage";
 
 function App() {
   const token = localStorage.getItem("token");
@@ -43,6 +44,7 @@ function App() {
             <Routes>
               {/* OAuth callback */}
               <Route path="/oauth-success" element={<OAuthSuccess />} />
+              <Route path="/faqs" element={<FaqsPage />} />
               {/* ✅ Redirect logged-in users straight to /main */}
               <Route
                 path="/"
