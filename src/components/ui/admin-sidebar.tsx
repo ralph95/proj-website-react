@@ -27,11 +27,12 @@ import {
   Moon,
   Sun,
   User,
+  Mail,
 } from "lucide-react";
 
 const menuItems = [
   { title: "Dashboard", icon: LayoutDashboard, to: "/dashboard" },
-  { title: "Analytics", icon: BarChart3, to: "/analytics" },
+  { title: "Mails", icon: Mail, to: "/main/emails" },
   { title: "Users", icon: Users, to: "/users" },
   { title: "Content", icon: FileText, to: "/content" },
   { title: "Activity", icon: Activity, to: "/activity" },

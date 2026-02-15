@@ -20,6 +20,8 @@ import CheckMailVerification from "./pages/CheckMailVerification";
 import ProtectedRoute from "./components/routes/ProtectedRoute";
 import OAuthSuccess from "./pages/OAuthSuccess.jsx";
 import FaqsPage from "./pages/FaqsPage";
+import MainLayout from "./layouts/MainLayout";
+import EmailsPage from "./pages/EmailsPage";
 
 function App() {
   const token = localStorage.getItem("token");
@@ -45,7 +47,7 @@ function App() {
               {/* OAuth callback */}
               <Route path="/oauth-success" element={<OAuthSuccess />} />
               <Route path="/faqs" element={<FaqsPage />} />
-              {/* ✅ Redirect logged-in users straight to /main */}
+              {/* Redirect logged-in users straight to /main */}
               <Route
                 path="/"
                 element={token ? <Navigate to="/main" replace /> : <HomePage />}
@@ -59,10 +61,14 @@ function App() {
                 path="/main"
                 element={
                   <ProtectedRoute>
-                    <DashBoardPage />
+                    <MainLayout />
                   </ProtectedRoute>
                 }
-              />
+              >
+                <Route index element={<DashBoardPage />} />
+                <Route path="emails" element={<EmailsPage />} />
+                {/* <Route path="users" element={<UsersPage />} /> */}
+              </Route>
 
               {/* Catch-all → redirect to home */}
               <Route path="*" element={<Navigate to="/" replace />} />

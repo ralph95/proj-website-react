@@ -17,24 +17,11 @@ export default function AdminDashboard() {
     <div className="flex flex-1 flex-col gap-4 p-4 sm:p-6">
       <div className="max-w-6xl mx-auto space-y-6 w-full">
         <div>
-          <h1 className="text-2xl font-bold sm:text-3xl">Welcome Admin</h1>
-          <p className="text-muted-foreground">
-            Here's what's happening with your platform today.
-          </p>
+          <h1 className="text-2xl font-bold sm:text-3xl">Email Contents</h1>
+          <p className="text-muted-foreground">Here's the emails for today.</p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
-          <div className="xl:col-span-2 space-y-6">
-            <RevenueChart />
-            <UsersTable onAddUser={handleAddUser} />
-          </div>
-
-          <div className="space-y-6">
-            <ChatBox />
-            <QuickActions onAddUser={handleAddUser} onExport={handleExport} />
-            <SystemStatus />
-          </div>
-        </div>
+        <UsersTable onAddUser={handleAddUser} />
       </div>
     </div>
   );
