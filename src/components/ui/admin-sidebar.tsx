@@ -31,7 +31,7 @@ import {
 } from "lucide-react";
 
 const menuItems = [
-  { title: "Dashboard", icon: LayoutDashboard, to: "/dashboard" },
+  { title: "Dashboard", icon: LayoutDashboard, to: "/main" },
   { title: "Mails", icon: Mail, to: "/main/emails" },
   { title: "Users", icon: Users, to: "/users" },
   { title: "Content", icon: FileText, to: "/content" },
