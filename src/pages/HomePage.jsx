@@ -516,9 +516,9 @@ const HomePage = () => {
                   </div>
                 </div>
                 <p className="mt-3 text-sm text-foreground text-wrap">
-                  Lightswind UI has completely changed how we design modern
-                  interfaces. Every component feels elegant, responsive, and
-                  intuitive.
+                  Ralph was a pleasure to work with. He has a great eye for
+                  design and solid technical skill, and overall it was a
+                  genuinely positive experience.
                 </p>
               </div>
             </div>
