@@ -22,5 +22,5 @@ ENV PORT=3000
 # Expose port 3000
 EXPOSE 3000
 
-# Start the Vite preview server
+# Start the Vite preview servers
 CMD ["npm", "run", "preview"]
